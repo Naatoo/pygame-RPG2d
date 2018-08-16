@@ -26,6 +26,7 @@ class Field(Base):
 
 
 class Item(Base):
+
     __tablename__ = 'Item'
 
     id = Column(Integer, primary_key=True)
@@ -37,6 +38,10 @@ class Item(Base):
     def __repr__(self):
         fmt = 'Item(id={}, name={}, weight={}, value ={}'
         return fmt.format(self.id, self.name, self.weight, self.value)
+
+    def __str__(self):
+        fmt = '{} weights {} and has the value of {}'
+        return fmt.format(self.name, self.weight, self.value)
 
 
 class Equipment(Base):
@@ -65,6 +70,13 @@ class Equipment(Base):
         else:
             raise TypeError("Checked element must be str or Item")
 
+    def __abs__(self):
+        return sum([item.weight for item in self.items])
+
+    def __str__(self):
+        fmt = 'Equipment with id {} and capacity {}/{}'
+        return fmt.format(self.id, abs(self), self.capacity)
+
     @property
     def items(self):
         return DbTools.get_all_rows(Item, Item.equipment_id, self.id)
@@ -84,6 +96,14 @@ class Character(Base):
     def __repr__(self):
         fmt = "Character(id={}, name={}, field_id={})"
         return fmt.format(self.id, self.name, self.field_id)
+
+    def __str__(self):
+        fmt = '{} stands on field {}'
+        return fmt.format(self.name, self.field_id)
+
+    @property
+    def equipment(self):
+        return DbTools.get_one_row(Equipment, Equipment.character_id, self.id)
 
     def move(self, direction):
         fields_changer = {"N": -20, "S": 20, "W": -1, "E": 1}
@@ -108,6 +128,10 @@ class DbTools:
     @staticmethod
     def get_all_rows(table_name, first_to_eq, second_to_eq):
         return session.query(table_name).filter(first_to_eq == second_to_eq).all()
+
+    @staticmethod
+    def get_one_row(table_name, first_to_eq, second_to_eq):
+        return session.query(table_name).filter(first_to_eq == second_to_eq).one()
 
 
 @contextmanager
