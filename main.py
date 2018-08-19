@@ -1,7 +1,7 @@
-from dbtools import DbTool
-from initial_data import insert_initial_data
-from world_map import WorldMap
-from action_checker import ActionChecker
+from database.dbtools import DbTool
+from initializers.initial_data_insertion import insert_initial_data
+from game.objects.world_map import WorldMap
+from game.operations.input_checker import ActionChecker
 
 
 try:
