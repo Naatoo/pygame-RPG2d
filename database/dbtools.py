@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
-from base import Base
+from database.base import Base
 import os
 
 
@@ -39,6 +39,9 @@ class DbTool(metaclass=Singleton):
     def insert_many_rows(self, rows: list):
         for row in rows:
             self.session.add(row)
+
+    def update_row(self, table_column_name: Base, equal_to_this: str or int, record: str, new_value: str or int):
+        self.session.query().filter(table_column_name == equal_to_this).update({record: new_value})
 
     def finish(self):
         self.session.commit()

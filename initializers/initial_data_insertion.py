@@ -1,6 +1,6 @@
-from dbtools import DbTool
-from game_objects import Field, Character, BoundedItem, Item
-from map_creation import GenerateWeather, GenerateBiomes
+from database.dbtools import DbTool
+from game.objects.db_objects import Field, Character, BoundedItem, Item
+from initializers.data_generators.map_data_generator import GenerateWeather, GenerateBiomes
 
 
 def insert_initial_data():

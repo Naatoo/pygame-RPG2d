@@ -1,5 +1,5 @@
-from create_tables import FieldTable, ItemTable, BoundedItemTable, CharacterTable
-from dbtools import DbTool
+from database.tables import FieldTable, ItemTable, BoundedItemTable, CharacterTable
+from database.dbtools import DbTool
 
 
 class Field(FieldTable):

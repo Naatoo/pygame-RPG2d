@@ -1,5 +1,5 @@
-from dbtools import DbTool
-from game_objects import Character
+from database.dbtools import DbTool
+from game.objects.db_objects import Character
 
 
 class Actions:
