@@ -25,7 +25,7 @@ class ActionChecker:
 
     @staticmethod
     @action
-    def move_north_n(player_input):
+    def move_north_w(player_input):
         Actions().player_move(player_input)
 
     @staticmethod
@@ -35,10 +35,10 @@ class ActionChecker:
 
     @staticmethod
     @action
-    def move_west_w(player_input):
+    def move_west_a(player_input):
         Actions().player_move(player_input)
 
     @staticmethod
     @action
-    def move_east_e(player_input):
+    def move_east_d(player_input):
         Actions().player_move(player_input)
