@@ -17,14 +17,14 @@ class ItemTable(Base):
     name = Column(String)
     weight = Column(Integer)
     value = Column(Integer)
-    equipment_id = Column(Integer, ForeignKey('Equipment.id'))
 
 
-class EquipmentTable(Base):
-    __tablename__ = 'Equipment'
+class BoundedItemTable(Base):
+    __tablename__ = 'BoundedItems'
 
     id = Column(Integer, primary_key=True)
-    capacity = Column(Integer)
+    item_id = Column(Integer, ForeignKey("Item.id"))
+    quantity = Column(Integer)
     character_id = Column(Integer, ForeignKey("Character.id"))
 
 

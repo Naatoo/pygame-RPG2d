@@ -1,4 +1,4 @@
-from create_tables import FieldTable, ItemTable, EquipmentTable, CharacterTable
+from create_tables import FieldTable, ItemTable, BoundedItemTable, CharacterTable
 from dbtools import DbTool
 
 
@@ -20,39 +20,22 @@ class Item(ItemTable):
         return fmt.format(self.name, self.weight, self.value)
 
 
-class Equipment(EquipmentTable):
+class BoundedItem(BoundedItemTable):
 
     def __repr__(self):
-        fmt = 'Equipment(id={}, capacity={}, character_id={})'
-        return fmt.format(self.id, self.capacity, self.character_id)
+        fmt = 'Item(name={}, quantity={})'
+        return fmt.format(self.name, self.quantity)
 
-    def __len__(self):
-        return len(self.items)
-
-    def __bool__(self):
-        return True if bool(self.items) else False
-
-    def __contains__(self, elem):
-        if isinstance(elem, str):
-            return True if elem in [item.name for item in self.items] else False
-        elif isinstance(elem, Item):
-            return True if elem.name in self.get_items_names() else False
-        else:
-            raise TypeError("Checked element must be str or Item")
-
-    def __abs__(self):
-        return sum([item.weight for item in self.items])
-
-    def __str__(self):
-        fmt = 'Equipment with id {} and capacity {}/{}'
-        return fmt.format(self.id, abs(self), self.capacity)
+    def get_this_item(self):
+        return DbTool().get_one_row(Item, Item.id, self.item_id)
 
     @property
-    def items(self):
-        return DbTool().get_all_rows(Item, Item.equipment_id, self.id)
+    def name(self):
+        return self.get_this_item().name
 
-    def get_items_names(self):
-        return [item.name for item in self.items]
+    @property
+    def weight(self):
+        return self.get_this_item().weight
 
 
 class Character(CharacterTable):
@@ -65,9 +48,29 @@ class Character(CharacterTable):
         fmt = '{} stands on field {}'
         return fmt.format(self.name, self.field_id)
 
+    def __len__(self):
+        return len(self.equipment)
+
+    def __bool__(self):
+        return True if bool(self.equipment) else False
+
+    def __contains__(self, elem):
+        if isinstance(elem, str):
+            return True if elem in self.get_items_names() else False
+        elif isinstance(elem, Item):
+            return True if elem.name in self.get_items_names() else False
+        else:
+            raise TypeError("Checked element must be str or Item")
+
+    def __abs__(self):
+        return sum([item.weight * item. quantity for item in self.equipment])
+
+    def get_items_names(self):
+        return [item.name for item in self.equipment]
+
     @property
     def equipment(self):
-        return DbTool().get_one_row(Equipment, Equipment.character_id, self.id)
+        return DbTool().get_all_rows(BoundedItem, BoundedItem.character_id, self.id)
 
     def move(self, direction):
         fields_changer = {"N": -20, "S": 20, "W": -1, "E": 1}
