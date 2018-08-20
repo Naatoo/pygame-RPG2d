@@ -1,12 +1,12 @@
 from database.dbtools import DbTool
-from game.objects.db_objects import Character
+from game.objects.db_objects import SpawnedCreature
 import game.output.messages as messages
 
 
 class Actions:
 
     def __init__(self):
-        self.player = DbTool().get_one_row(Character, Character.id, 1)
+        self.player = DbTool().get_one_row(SpawnedCreature, SpawnedCreature.id, 1)
 
     def player_move(self, direction):
         fields_changer = {"w": -20, "s": 20, "a": -1, "d": 1}

@@ -1,13 +1,15 @@
 from database.dbtools import DbTool
-from game.objects.db_objects import Field, Character, BoundedItem, Item
+from game.objects.db_objects import Field, CreatureGroup, CreatureType, SpawnedCreature, BoundedItem, Item
 from initializers.data_generators.map_data_generator import GenerateWeather, GenerateBiomes
 
 
 def insert_initial_data():
     insert_fields()
-    insert_characters()
-    insert_bounded_items()
+    insert_creature_groups()
+    insert_creature_types()
+    insert_spawned_creature()
     insert_items()
+    insert_bounded_items()
 
 
 def insert_fields():
@@ -15,10 +17,25 @@ def insert_fields():
         DbTool().insert_row(Field(biome=biome, weather=weather))
 
 
-def insert_characters():
-    DbTool().insert_many_rows([Character(name="Player1", field_id=25),
-                              Character(name="Player2", field_id=78),
-                              Character(name="Player3", field_id=145)])
+def insert_creature_groups():
+    DbTool().insert_many_rows([CreatureGroup(name="player", talkative=True, trader=True),
+                               CreatureGroup(name="NPC", talkative=True, trader=True),
+                               CreatureGroup(name="animal", talkative=False, trader=False)])
+
+
+def insert_creature_types():
+    DbTool().insert_many_rows(([CreatureType(name="Player", strength=20, agility=20, group_id=1),
+                                CreatureType(name="Blacksmith", strength=30, agility=15, group_id=2),
+                                CreatureType(name="Monk", strength=5, agility=30, group_id=2),
+                                CreatureType(name="Wolf", strength=5, agility=40, group_id=3),
+                                CreatureType(name="Bear", strength=40, agility=10, group_id=3)]))
+
+
+def insert_spawned_creature():
+    DbTool().insert_many_rows([SpawnedCreature(field_id=44, type_id=1),
+                               SpawnedCreature(custom_name="Meldor", field_id=56, type_id=2),
+                               SpawnedCreature(field_id=56, type_id=2),
+                               SpawnedCreature(custom_name="Ornlu the wolf", field_id=33, type_id=4)])
 
 
 def insert_items():

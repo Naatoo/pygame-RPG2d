@@ -1,4 +1,5 @@
-from database.tables import FieldTable, ItemTable, BoundedItemTable, CharacterTable
+from database.tables import FieldTable, ItemTable, BoundedItemTable, CreatureGroupTable, CreatureTypeTable,\
+    SpawnedCreatureTable
 from database.dbtools import DbTool
 
 
@@ -38,15 +39,33 @@ class BoundedItem(BoundedItemTable):
         return self.get_this_item().weight
 
 
-class Character(CharacterTable):
+class CreatureGroup(CreatureGroupTable):
 
     def __repr__(self):
-        fmt = "Character(id={}, name={}, field_id={})"
-        return fmt.format(self.id, self.name, self.field_id)
+        fmt = 'CreatureGroup(id={}, name={}, talkative={}, trader={}'
+        return fmt.format(self.id, self.name, self.talkative, self.trader)
+
+
+class CreatureType(CreatureTypeTable):
+
+    def __repr__(self):
+        fmt = 'CreatureType(id={}, name={}, strength={}, agility={}, type_name={}'
+        return fmt.format(self.id, self.name, self.strength, self.agility, self.group.name)
+
+    @property
+    def group(self):
+        return DbTool().get_one_row(CreatureGroup, CreatureGroup.id, self.type_id)
+
+
+class SpawnedCreature(SpawnedCreatureTable):
+
+    def __repr__(self):
+        fmt = "SpawnedCreature(id={}, name={}, field_id={})"
+        return fmt.format(self.id, self.name if self.name is not None else self.type.name, self.field_id)
 
     def __str__(self):
         fmt = '{} stands on field {}'
-        return fmt.format(self.name, self.field_id)
+        return fmt.format(self.name if self.name is not None else self.type.name, self.field_id)
 
     def __len__(self):
         return len(self.equipment)
@@ -71,3 +90,7 @@ class Character(CharacterTable):
     @property
     def equipment(self):
         return DbTool().get_all_rows(BoundedItem, BoundedItem.character_id, self.id)
+
+    @property
+    def type(self):
+        return DbTool().get_one_row(CreatureType, CreatureType.id, self.type_id)
