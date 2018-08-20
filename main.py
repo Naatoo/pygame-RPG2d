@@ -11,6 +11,7 @@ try:
     action_checker = ActionChecker()
 
     while True:
+        print(world_map)
         action_checker(input("What do you want to do?"))
 
 finally:

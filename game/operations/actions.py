@@ -11,7 +11,7 @@ class Actions:
     def player_move(self, direction):
         fields_changer = {"w": -20, "s": 20, "a": -1, "d": 1}
         forbidden_range = self.get_forbidden_fields_check_map_borders(direction)
-        if self.player.field_id + fields_changer[direction] not in forbidden_range:
+        if self.player.field_id not in forbidden_range:
             self.player.field_id += fields_changer[direction]
         else:
             messages.forbidden_field_to_move(direction)
