@@ -14,14 +14,13 @@ class WorldMap:
         pass
 
     def __format__(self, format_spec='c'):
-
         if format_spec in "tc":
             list_to_format = ['{} ' if field.id % self.size != 0 else '{}\n' for field in self.__fields]
             joined_list = "".join(list_to_format)
             if format_spec == "t":
-                return joined_list.format(*(field.biome for field in self.__fields))
+                return joined_list.format(*(field.type.sign for field in self.__fields))
             elif format_spec == "c":
-                return joined_list.format(*(field.biome if field.id not in self.creature_field_id
+                return joined_list.format(*(field.type.sign if field.id not in self.creature_field_id
                                             else "X" for field in self.__fields))
         elif format_spec == "i":
             list_to_format = ['{}' + " " * round(1 / (len(str(field.id)) / 3)) if field.id % self.size != 0

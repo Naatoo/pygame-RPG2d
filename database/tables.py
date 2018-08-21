@@ -2,12 +2,20 @@ from sqlalchemy import Column, Integer, String, ForeignKey, Boolean
 from database.base import Base
 
 
+class FieldTypeTable(Base):
+    __tablename__ = 'FieldType'
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    sign = Column(String(1))
+    accessible = Column(Boolean)
+
+
 class FieldTable(Base):
     __tablename__ = 'Field'
 
     id = Column(Integer, primary_key=True)
-    biome = Column(String(3))
-    weather = Column(String(3))
+    type_id = Column(Integer, ForeignKey('FieldType.id'))
 
 
 class CreatureGroupTable(Base):

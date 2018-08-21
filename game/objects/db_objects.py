@@ -1,13 +1,24 @@
-from database.tables import FieldTable, ItemTable, BoundedItemTable, CreatureGroupTable, CreatureTypeTable,\
-    SpawnedCreatureTable
+from database.tables import FieldTypeTable, FieldTable, ItemTable, BoundedItemTable, CreatureGroupTable,\
+    CreatureTypeTable, SpawnedCreatureTable
 from database.dbtools import DbTool
+
+
+class FieldType(FieldTypeTable):
+
+    def __repr__(self):
+        fmt = "FieldType(id={}, name={], sign={}, accessible={}"
+        return fmt.format(self.id, self.name, self.sign, self.accessible)
 
 
 class Field(FieldTable):
 
     def __repr__(self):
-        fmt = "Field(id={}, biome={}, weather={})"
-        return fmt.format(self.id, self.biome, self.weather)
+        fmt = "Field(id={}, type_name={})"
+        return fmt.format(self.id, self.type.name)
+
+    @property
+    def type(self):
+        return DbTool().get_one_row(FieldType, FieldType.id, self.type_id)
 
 
 class Item(ItemTable):

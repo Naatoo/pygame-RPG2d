@@ -1,36 +1,30 @@
 from random import choice
 
 
-class GenerateBiomes:
+class GenerateFields:
 
     def __init__(self):
         self.size = 20
-        self.__indexes = ["g" for _ in range(pow(self.size, 2))]
-        self.sample_list = [x for x in range(pow(self.size, 2))]
+        self.__types = {}
 
         self.cities()
+        self.mountains()
+        self.plains()
 
     def cities(self):
-        if self.size == 20:
-            for _ in range(3):
-                self.__indexes[choice(self.sample_list)] = "C"
+        for _ in range(3):
+            self.__types[choice(range(1, 401))] = 4
 
-    def __call__(self):
-        return self.__indexes
+    def mountains(self):
+        for _ in range(3):
+            index = choice(range(1, 370))
+            [self.__types.update({x: 3}) for x in range(index, index + 20)]
 
-    @property
-    def indexes(self):
-        return self.__indexes
-
-    def __iter__(self):
-        return iter(biome for biome in self.__indexes)
-
-
-class GenerateWeather:
-
-    def __init__(self):
-        self.size = 20
+    def plains(self):
+        for index in range(1, 401):
+            if index not in self.__types.keys():
+                self.__types[index] = 1
 
     @property
     def data(self):
-        return ["SUN" for _ in range(self.size ** 2)]
+        return self.__types

@@ -1,9 +1,10 @@
 from database.dbtools import DbTool
-from game.objects.db_objects import Field, CreatureGroup, CreatureType, SpawnedCreature, BoundedItem, Item
-from initializers.data_generators.map_data_generator import GenerateWeather, GenerateBiomes
+from game.objects.db_objects import FieldType, Field, CreatureGroup, CreatureType, SpawnedCreature, BoundedItem, Item
+from initializers.data_generators.map_data_generator import GenerateFields
 
 
 def insert_initial_data():
+    insert_field_types()
     insert_fields()
     insert_creature_groups()
     insert_creature_types()
@@ -12,9 +13,16 @@ def insert_initial_data():
     insert_bounded_items()
 
 
+def insert_field_types():
+    DbTool().insert_many_rows([FieldType(name="plain", sign="O", accessible=True),
+                               FieldType(name="road", sign="=", accessible=True),
+                               FieldType(name="mountains", sign="^", accessible=False),
+                               FieldType(name="city", sign="#", accessible=True)])
+
+
 def insert_fields():
-    for biome, weather in zip(list(GenerateBiomes()), GenerateWeather().data):
-        DbTool().insert_row(Field(biome=biome, weather=weather))
+    for type_id in GenerateFields().data.values():
+        DbTool().insert_row(Field(type_id=type_id))
 
 
 def insert_creature_groups():
