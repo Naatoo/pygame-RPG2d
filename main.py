@@ -1,12 +1,12 @@
 from database.dbtools import DbTool
-from initializers.initial_data_insertion import insert_initial_data
+from initializers.initial_data_insertion import load_initial_data
 from game.objects.world_map import WorldMap
 from game.operations.input_checker import ActionChecker
 
 
 try:
     dbtool = DbTool()
-    insert_initial_data()
+    load_initial_data()
     world_map = WorldMap()
     action_checker = ActionChecker()
 
