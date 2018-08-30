@@ -1,11 +1,12 @@
+import json
+
 from database.dbtools import DbTool
 from game.objects.db_objects import FieldType, Field, CreatureGroup, CreatureType, SpawnedCreature, BoundedItem, Item
-from initializers.data_generators.map_data_generator import GenerateFields
+from tools.global_paths import MAP_DATA_FILE
 
 
 def insert_initial_data():
-    insert_field_types()
-    insert_fields()
+    insert_map_data()
     insert_creature_groups()
     insert_creature_types()
     insert_spawned_creature()
@@ -13,16 +14,13 @@ def insert_initial_data():
     insert_bounded_items()
 
 
-def insert_field_types():
-    DbTool().insert_many_rows([FieldType(name="plain", sign="O", accessible=True),
-                               FieldType(name="road", sign="=", accessible=True),
-                               FieldType(name="mountains", sign="^", accessible=False),
-                               FieldType(name="city", sign="#", accessible=True)])
-
-
-def insert_fields():
-    for type_id in GenerateFields().data.values():
-        DbTool().insert_row(Field(type_id=type_id))
+def insert_map_data():
+    obj_dict = {"FieldType": FieldType, "Field": Field}
+    with open(MAP_DATA_FILE) as f:
+        json_data = json.loads(f.read())
+        for table_name in obj_dict.keys():
+            for row in json_data[table_name]:
+                DbTool().insert_row(obj_dict[table_name](**row))
 
 
 def insert_creature_groups():
