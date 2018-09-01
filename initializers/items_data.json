@@ -1,25 +1,25 @@
 {
   "Item": [
     {
-      "id": 1,
+      "id_item": 1,
       "name": "Apple",
       "weight": 3,
       "value": 5
     },
     {
-      "id": 2,
+      "id_item": 2,
       "name": "Potato",
       "weight": 2,
       "value": 3
     },
     {
-      "id": 3,
+      "id_item": 3,
       "name": "Watermelon",
       "weight": 8,
       "value": 12
     },
     {
-      "id": 4,
+      "id_item": 4,
       "name": "Onion",
       "weight": 2,
       "value": 5
@@ -29,27 +29,27 @@
     {
       "item_id": 1,
       "quantity": 2,
-      "character_id": 1
+      "spawned_creature_id": 1
     },
     {
       "item_id": 2,
       "quantity": 13,
-      "character_id": 1
+      "spawned_creature_id": 1
     },
     {
       "item_id": 4,
       "quantity": 23,
-      "character_id": 1
+      "spawned_creature_id": 1
     },
     {
       "item_id": 3,
       "quantity": 1,
-      "character_id": 2
+      "spawned_creature_id": 2
     },
     {
       "item_id": 2,
       "quantity": 5,
-      "character_id": 2
+      "spawned_creature_id": 2
     }
   ]
 }

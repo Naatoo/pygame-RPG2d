@@ -1,19 +1,19 @@
 {
   "CreatureGroup": [
     {
-      "id": 1,
+      "id_creature_group": 1,
       "name": "player",
       "talkative": true,
       "trader": true
     },
     {
-      "id": 2,
+      "id_creature_group": 2,
       "name": "NPC",
       "talkative": true,
       "trader": true
     },
     {
-      "id": 3,
+      "id_creature_group": 3,
       "name": "animal",
       "talkative": false,
       "trader": false
@@ -21,54 +21,54 @@
   ],
   "CreatureType": [
     {
-      "id": 1,
+      "id_creature_type": 1,
       "name": "Player",
       "strength": 20,
       "agility": 20,
-      "group_id": 1
+      "creature_group_id": 1
     },
     {
-      "id": 2,
+      "id_creature_type": 2,
       "name": "Blacksmith",
       "strength": 30,
       "agility": 15,
-      "group_id": 2
+      "creature_group_id": 2
     },
     {
-      "id": 3,
+      "id_creature_type": 3,
       "name": "Monk",
       "strength": 5,
       "agility": 30,
-      "group_id": 2
+      "creature_group_id": 2
     },
     {
-      "id": 4,
+      "id_creature_type": 4,
       "name": "Wolf",
       "strength": 5,
       "agility": 40,
-      "group_id": 3
+      "creature_group_id": 3
     },
     {
-      "id": 5,
+      "id_creature_type": 5,
       "name": "Bear",
       "strength": 40,
       "agility": 10,
-      "group_id": 3
+      "creature_group_id": 3
     }
   ],
   "SpawnedCreature": [
     {
-      "field_id": 44,
-      "type_id": 1
+      "spawned_creature_field_id": 44,
+      "spawned_creature_type_id": 1
     },
     {
-      "field_id": 56,
-      "type_id": 2,
+      "spawned_creature_field_id": 56,
+      "spawned_creature_type_id": 2,
       "custom_name": "Meldor"
     },
     {
-      "field_id": 33,
-      "type_id": 4,
+      "spawned_creature_field_id": 33,
+      "spawned_creature_type_id": 4,
       "custom_name": "Ornlu the wolf"
     }
   ]
