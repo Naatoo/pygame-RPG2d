@@ -29,7 +29,7 @@ class WorldMap:
             return joined_list.format(*(field.id_field for field in self.__fields))
 
     def __repr__(self):
-        return format(self, "c")
+        return format(self, "t")
 
     @property
     def creature_field_id(self):
