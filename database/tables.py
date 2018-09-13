@@ -46,6 +46,25 @@ class SpawnedCreatureTable(Base):
     spawned_creature_type_id = Column(Integer, ForeignKey('CreatureType.id_creature_type'))
 
 
+class ContainerTypeTable(Base):
+    __tablename__ = 'ContainerType'
+
+    id_container_type = Column(Integer, primary_key=True)
+    name = Column(String, nullable=False)
+    capacity = Column(Integer, nullable=False)
+
+
+class ContainerTable(Base):
+    __tablename__ = 'Container'
+
+    id_container = Column(Integer, primary_key=True)
+    custom_name = Column(String, nullable=True)
+    capacity = Column(Integer, nullable=True)
+    container_type_id = Column(Integer, ForeignKey('ContainerType.id_container_type'), nullable=False)
+    container_creature_id = Column(Integer, ForeignKey('SpawnedCreature.id_spawned_creature'), nullable=True)
+    container_field_id = Column(Integer, ForeignKey("Field.id_field"), nullable=True)
+
+
 class ItemTable(Base):
     __tablename__ = 'Item'
 
@@ -61,4 +80,4 @@ class BoundedItemTable(Base):
     id_bounded_item = Column(Integer, primary_key=True)
     quantity = Column(Integer)
     item_id = Column(Integer, ForeignKey("Item.id_item"))
-    spawned_creature_id = Column(Integer, ForeignKey("SpawnedCreature.id_spawned_creature"))
+    container_id = Column(Integer, ForeignKey("Container.id_container"))

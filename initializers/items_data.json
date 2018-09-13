@@ -29,27 +29,27 @@
     {
       "item_id": 1,
       "quantity": 2,
-      "spawned_creature_id": 1
+      "container_id": 0
     },
     {
       "item_id": 2,
       "quantity": 13,
-      "spawned_creature_id": 1
+      "container_id": 0
     },
     {
       "item_id": 4,
       "quantity": 23,
-      "spawned_creature_id": 1
+      "container_id": 0
     },
     {
       "item_id": 3,
       "quantity": 1,
-      "spawned_creature_id": 2
+      "container_id": 0
     },
     {
       "item_id": 2,
       "quantity": 5,
-      "spawned_creature_id": 2
+      "container_id": 0
     }
   ]
 }

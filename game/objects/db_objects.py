@@ -1,5 +1,5 @@
 from database.tables import FieldTypeTable, FieldTable, ItemTable, BoundedItemTable, CreatureGroupTable,\
-    CreatureTypeTable, SpawnedCreatureTable
+    CreatureTypeTable, SpawnedCreatureTable, ContainerTypeTable, ContainerTable
 from database.dbtools import DbTool
 
 
@@ -19,35 +19,6 @@ class Field(FieldTable):
     @property
     def type(self):
         return DbTool().get_one_row(FieldType, FieldType.id_field_type, self.field_type_id)
-
-
-class Item(ItemTable):
-
-    def __repr__(self):
-        fmt = 'Item(id={}, name={}, weight={}, value ={}'
-        return fmt.format(self.id_item, self.name, self.weight, self.value)
-
-    def __str__(self):
-        fmt = '{} weights {} and has the value of {}'
-        return fmt.format(self.name, self.weight, self.value)
-
-
-class BoundedItem(BoundedItemTable):
-
-    def __repr__(self):
-        fmt = 'Item(name={}, quantity={})'
-        return fmt.format(self.name, self.quantity)
-
-    def get_this_item(self):
-        return DbTool().get_one_row(Item, Item.id_item, self.item_id)
-
-    @property
-    def name(self):
-        return self.get_this_item().name
-
-    @property
-    def weight(self):
-        return self.get_this_item().weight
 
 
 class CreatureGroup(CreatureGroupTable):
@@ -105,3 +76,46 @@ class SpawnedCreature(SpawnedCreatureTable):
     @property
     def type(self):
         return DbTool().get_one_row(CreatureType, CreatureType.id_creature_type, self.spawned_creature_type_id)
+
+
+class Item(ItemTable):
+
+    def __repr__(self):
+        fmt = 'Item(id={}, name={}, weight={}, value ={}'
+        return fmt.format(self.id_item, self.name, self.weight, self.value)
+
+    def __str__(self):
+        fmt = '{} weights {} and has the value of {}'
+        return fmt.format(self.name, self.weight, self.value)
+
+
+class BoundedItem(BoundedItemTable):
+
+    def __repr__(self):
+        fmt = 'Item(name={}, quantity={})'
+        return fmt.format(self.name, self.quantity)
+
+    def get_this_item(self):
+        return DbTool().get_one_row(Item, Item.id_item, self.item_id)
+
+    @property
+    def name(self):
+        return self.get_this_item().name
+
+    @property
+    def weight(self):
+        return self.get_this_item().weight
+
+
+class ContainerType(ContainerTypeTable):
+
+    def __repr__(self):
+        fmt = 'ContainerType(id={}, name={}, capacity={})'
+        return fmt.format(self.id_container_type, self.name, self.capacity)
+
+
+class Container(ContainerTable):
+
+    def __repr__(self):
+        fmt = 'Container(id={}, name={})'
+        return fmt.format(self.id_container, self.name)
