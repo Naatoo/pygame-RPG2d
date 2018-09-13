@@ -65,6 +65,15 @@ class ContainerTable(Base):
     container_field_id = Column(Integer, ForeignKey("Field.id_field"), nullable=True)
 
 
+class ItemTypeTable(Base):
+    __tablename__ = 'ItemType'
+
+    id_item_type = Column(String(3), primary_key=True)
+    name = Column(String, nullable=False)
+    consumable = Column(Boolean, nullable=False)
+    special_effect = Column(String(3), nullable=True)
+
+
 class ItemTable(Base):
     __tablename__ = 'Item'
 
@@ -72,6 +81,7 @@ class ItemTable(Base):
     name = Column(String)
     weight = Column(Integer)
     value = Column(Integer)
+    item_type_id = Column(String(3), ForeignKey("ItemType.id_item_type"))
 
 
 class BoundedItemTable(Base):

@@ -1,5 +1,5 @@
 from database.dbtools import DbTool
-from game.objects.db_objects import SpawnedCreature
+from game.objects.db_objects import SpawnedCreature, Container
 import game.output.messages as messages
 
 
@@ -15,6 +15,12 @@ class Actions:
             self.player.spawned_creature_field_id += fields_changer[direction]
         else:
             messages.forbidden_field_to_move(direction)
+
+    def display_items(self):
+        field_container = DbTool().get_one_row(Container, Container.id_container,
+                                               self.player.spawned_creature_field_id)
+        if field_container.content:
+            messages.items_on_the_ground({item.name: item.quantity for item in field_container.content})
 
     @staticmethod
     def get_forbidden_fields_check_map_borders(direction):

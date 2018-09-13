@@ -22,6 +22,7 @@ class ActionChecker:
         for func in possible_actions_registry:
             if self.player_input == func.__name__[-1]:
                 func(player_input)
+                Actions().display_items()
 
     @staticmethod
     @action

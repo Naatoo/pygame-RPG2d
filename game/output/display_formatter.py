@@ -1,7 +1,3 @@
-def print_message(message):
-    print(build_message(message))
-
-
 def formatter(sign="-", quantity=50):
     def decorate(func):
         def formatted(*args):
@@ -14,5 +10,10 @@ def formatter(sign="-", quantity=50):
 
 
 @formatter(sign="+", quantity=25)
-def build_message(message):
+def move_mes(message):
+    return ["{}", message, "{}"]
+
+
+@formatter(sign="-", quantity=40)
+def items_mes(message):
     return ["{}", message, "{}"]

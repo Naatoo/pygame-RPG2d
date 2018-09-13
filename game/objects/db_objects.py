@@ -1,4 +1,4 @@
-from database.tables import FieldTypeTable, FieldTable, ItemTable, BoundedItemTable, CreatureGroupTable,\
+from database.tables import FieldTypeTable, FieldTable, ItemTypeTable, ItemTable, BoundedItemTable, CreatureGroupTable,\
     CreatureTypeTable, SpawnedCreatureTable, ContainerTypeTable, ContainerTable
 from database.dbtools import DbTool
 
@@ -78,6 +78,13 @@ class SpawnedCreature(SpawnedCreatureTable):
         return DbTool().get_one_row(CreatureType, CreatureType.id_creature_type, self.spawned_creature_type_id)
 
 
+class ItemType(ItemTypeTable):
+
+    def __repr__(self):
+        fmt = 'ItemType(id={}, name={], consumable={}, special_effect={}'
+        return fmt.format(self.id_item_type, self.name, self.consumable, self.special_effect)
+
+
 class Item(ItemTable):
 
     def __repr__(self):
@@ -118,4 +125,8 @@ class Container(ContainerTable):
 
     def __repr__(self):
         fmt = 'Container(id={}, name={})'
-        return fmt.format(self.id_container, self.name)
+        return fmt.format(self.id_container, self.custom_name)
+
+    @property
+    def content(self):
+        return [item for item in DbTool().get_all_rows(BoundedItem, BoundedItem.container_id, self.id_container)]
