@@ -6,13 +6,13 @@ import game.output.messages as messages
 class Actions:
 
     def __init__(self):
-        self.player = DbTool().get_one_row(SpawnedCreature, SpawnedCreature.id_spawned_creature, 1)
+        self.player = DbTool().get_one_row(SpawnedCreature, SpawnedCreature.id_spawned_creature, 0)
 
     def player_move(self, direction):
         fields_changer = {"w": -20, "s": 20, "a": -1, "d": 1}
         forbidden_range = self.get_forbidden_fields_check_map_borders(direction)
-        if self.player.field_id not in forbidden_range:
-            self.player.field_id += fields_changer[direction]
+        if self.player.spawned_creature_field_id not in forbidden_range:
+            self.player.spawned_creature_field_id += fields_changer[direction]
         else:
             messages.forbidden_field_to_move(direction)
 

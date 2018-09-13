@@ -8,7 +8,7 @@ def action(func):
         possible_actions_registry.append(func)
         return func
     else:
-        raise ValueError("This letter is already in use")
+        raise NameError("This letter is already in use")
 
 
 class ActionChecker:

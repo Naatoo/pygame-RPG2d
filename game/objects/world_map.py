@@ -20,7 +20,7 @@ class WorldMap:
             if format_spec == "t":
                 return joined_list.format(*(field.type.sign for field in self.__fields))
             elif format_spec == "c":
-                return joined_list.format(*(field.type.sign if field.id_field not in self.creature_field_id
+                return joined_list.format(*(field.type.sign if field.id_field != self.player_field_id
                                             else "X" for field in self.__fields))
         elif format_spec == "i":
             list_to_format = ['{}' + " " * round(1 / (len(str(field.id_field)) / 3)) if field.id_field % self.size != 0
@@ -29,8 +29,12 @@ class WorldMap:
             return joined_list.format(*(field.id_field for field in self.__fields))
 
     def __repr__(self):
-        return format(self, "t")
+        return format(self, "c")
 
     @property
     def creature_field_id(self):
         return [character.spawned_creature_field_id for character in DbTool().get_all_rows(SpawnedCreature)]
+
+    @property
+    def player_field_id(self):
+        return DbTool().get_one_row(SpawnedCreature, SpawnedCreature.id_spawned_creature, 0).spawned_creature_field_id

@@ -1,19 +1,19 @@
 {
   "CreatureGroup": [
     {
-      "id_creature_group": 1,
+      "id_creature_group": 0,
       "name": "player",
       "talkative": true,
       "trader": true
     },
     {
-      "id_creature_group": 2,
+      "id_creature_group": 1,
       "name": "NPC",
       "talkative": true,
       "trader": true
     },
     {
-      "id_creature_group": 3,
+      "id_creature_group": 2,
       "name": "animal",
       "talkative": false,
       "trader": false
@@ -21,54 +21,57 @@
   ],
   "CreatureType": [
     {
-      "id_creature_type": 1,
+      "id_creature_type": 0,
       "name": "Player",
       "strength": 20,
       "agility": 20,
       "creature_group_id": 1
     },
     {
-      "id_creature_type": 2,
+      "id_creature_type": 1,
       "name": "Blacksmith",
       "strength": 30,
       "agility": 15,
-      "creature_group_id": 2
+      "creature_group_id": 1
     },
     {
-      "id_creature_type": 3,
+      "id_creature_type": 2,
       "name": "Monk",
       "strength": 5,
       "agility": 30,
+      "creature_group_id": 1
+    },
+    {
+      "id_creature_type": 3,
+      "name": "Wolf",
+      "strength": 5,
+      "agility": 40,
       "creature_group_id": 2
     },
     {
       "id_creature_type": 4,
-      "name": "Wolf",
-      "strength": 5,
-      "agility": 40,
-      "creature_group_id": 3
-    },
-    {
-      "id_creature_type": 5,
       "name": "Bear",
       "strength": 40,
       "agility": 10,
-      "creature_group_id": 3
+      "creature_group_id": 2
     }
   ],
   "SpawnedCreature": [
     {
+      "id_spawned_creature": 0,
       "spawned_creature_field_id": 44,
-      "spawned_creature_type_id": 1
+      "spawned_creature_type_id": 0
     },
     {
+      "id_spawned_creature": 1,
       "spawned_creature_field_id": 56,
-      "spawned_creature_type_id": 2,
+      "spawned_creature_type_id": 1,
       "custom_name": "Meldor"
     },
     {
+      "id_spawned_creature": 2,
       "spawned_creature_field_id": 33,
-      "spawned_creature_type_id": 4,
+      "spawned_creature_type_id": 3,
       "custom_name": "Ornlu the wolf"
     }
   ]
