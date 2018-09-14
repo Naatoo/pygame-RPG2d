@@ -1,36 +1,4 @@
 {
-  "FieldType": [
-    {
-      "id_field_type": 1,
-      "name": "plain",
-      "sign": "O",
-      "accessible": true
-    },
-    {
-      "id_field_type": 2,
-      "name": "road_horizontal",
-      "sign": "=",
-      "accessible": true
-    },
-    {
-      "id_field_type": 3,
-      "name": "road_vertical",
-      "sign": "‖",
-      "accessible": true
-    },
-    {
-      "id_field_type": 4,
-      "name": "city",
-      "sign": "#",
-      "accessible": true
-    },
-    {
-      "id_field_type": 5,
-      "name": "mountains",
-      "sign": "^",
-      "accessible": false
-    }
-  ],
   "Field": [
     {
       "id_field": 1,
