@@ -1,7 +1,9 @@
+import os
+import importlib
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from database.base import Base
-import os
 
 
 class Singleton(type):
@@ -23,12 +25,20 @@ class DbTool(metaclass=Singleton):
         self.session = Session(self.engine)
         Base.metadata.create_all(self.engine)
 
-    def get_all_rows(self, table_name, first_to_eq=None, second_to_eq=None):
-        return self.session.query(table_name).filter(first_to_eq == second_to_eq).all() if first_to_eq is not None \
-            else self.session.query(table_name)
+    def get_full_rows(self, data: tuple):
+        module, table_name = data
+        table = getattr(importlib.import_module(module), table_name)
+        return self.session.query(table)
 
-    def get_one_row(self, table_name, first_to_eq, second_to_eq):
-        return self.session.query(table_name).filter(first_to_eq == second_to_eq).one()
+    def get_all_rows(self, data: tuple, second_to_eq=None):
+        module, table_name, col = data
+        table = getattr(importlib.import_module(module), table_name)
+        return self.session.query(table).filter(getattr(table, col) == second_to_eq).all()
+
+    def get_one_row(self, data: tuple, second_to_eq):
+        module, table_name, col = data
+        table = getattr(importlib.import_module(module), table_name)
+        return self.session.query(table).filter(getattr(table, col) == second_to_eq).one()
 
     def get_one_column(self, column_name):
         return self.session.query(column_name)

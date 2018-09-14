@@ -1,11 +1,10 @@
 from database.dbtools import DbTool
-from game.objects.db_objects import Field, SpawnedCreature
 
 
 class WorldMap:
     def __init__(self):
         self.size = 20
-        self.__fields = DbTool().get_all_rows(Field)
+        self.__fields = DbTool().get_full_rows(('game.objects.fields', 'Field'))
 
     def __getitem__(self, item):
         return self.__fields[item - 1]
@@ -33,8 +32,10 @@ class WorldMap:
 
     @property
     def creature_field_id(self):
-        return [character.spawned_creature_field_id for character in DbTool().get_all_rows(SpawnedCreature)]
+        return [character.spawned_creature_field_id for character in
+                DbTool().get_full_rows(('game.objects.creatures', 'SpawnedCreature'))]
 
     @property
     def player_field_id(self):
-        return DbTool().get_one_row(SpawnedCreature, SpawnedCreature.id_spawned_creature, 0).spawned_creature_field_id
+        return DbTool().get_one_row(('game.objects.creatures', 'SpawnedCreature', 'id_spawned_creature'), 0)\
+            .spawned_creature_field_id
