@@ -7,7 +7,7 @@ class FieldTypeTable(Base):
 
     id_field_type = Column(Integer, primary_key=True)
     name = Column(String)
-    sign = Column(String(1))
+    image = Column(String)
     accessible = Column(Boolean)
 
 
@@ -15,6 +15,8 @@ class FieldTable(Base):
     __tablename__ = 'Field'
 
     id_field = Column(Integer, primary_key=True)
+    x = Column(Integer)
+    y = Column(Integer)
     field_type_id = Column(Integer, ForeignKey('FieldType.id_field_type'))
 
 
@@ -42,7 +44,8 @@ class SpawnedCreatureTable(Base):
 
     id_spawned_creature = Column(Integer, primary_key=True)
     custom_name = Column(String, nullable=True)
-    spawned_creature_field_id = Column(Integer, ForeignKey('Field.id_field'))
+    x = Column(Integer, ForeignKey('Field.x'))
+    y = Column(Integer, ForeignKey('Field.y'))
     spawned_creature_type_id = Column(Integer, ForeignKey('CreatureType.id_creature_type'))
 
 
@@ -62,7 +65,8 @@ class ContainerTable(Base):
     capacity = Column(Integer, nullable=True)
     container_type_id = Column(Integer, ForeignKey('ContainerType.id_container_type'), nullable=False)
     container_creature_id = Column(Integer, ForeignKey('SpawnedCreature.id_spawned_creature'), nullable=True)
-    container_field_id = Column(Integer, ForeignKey("Field.id_field"), nullable=True)
+    x = Column(Integer, ForeignKey("Field.x"))
+    y = Column(Integer, ForeignKey("Field.y"))
 
 
 class ItemTypeTable(Base):

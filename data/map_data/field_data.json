@@ -1,1603 +1,2003 @@
 {
   "Field": [
     {
-      "id_field": 1,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 2,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 3,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 4,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 5,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 6,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 7,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 8,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 9,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 10,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 11,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 12,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 13,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 14,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 15,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 16,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 17,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 18,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 19,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 20,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 21,
+      "x": 1,
+      "y": 1,
       "field_type_id": 1
     },
     {
-      "id_field": 22,
-      "field_type_id": 1
-    },
-    {
-      "id_field": 23,
-      "field_type_id": 1
-    },
-    {
-      "id_field": 24,
-      "field_type_id": 1
-    },
-    {
-      "id_field": 25,
-      "field_type_id": 1
-    },
-    {
-      "id_field": 26,
-      "field_type_id": 1
-    },
-    {
-      "id_field": 27,
-      "field_type_id": 1
-    },
-    {
-      "id_field": 28,
-      "field_type_id": 1
-    },
-    {
-      "id_field": 29,
-      "field_type_id": 1
-    },
-    {
-      "id_field": 30,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 31,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 32,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 33,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 34,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 35,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 36,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 37,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 38,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 39,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 40,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 41,
-      "field_type_id": 1
-    },
-    {
-      "id_field": 42,
-      "field_type_id": 1
-    },
-    {
-      "id_field": 43,
-      "field_type_id": 1
-    },
-    {
-      "id_field": 44,
-      "field_type_id": 1
-    },
-    {
-      "id_field": 45,
-      "field_type_id": 1
-    },
-    {
-      "id_field": 46,
-      "field_type_id": 1
-    },
-    {
-      "id_field": 47,
-      "field_type_id": 1
-    },
-    {
-      "id_field": 48,
-      "field_type_id": 1
-    },
-    {
-      "id_field": 49,
-      "field_type_id": 1
-    },
-    {
-      "id_field": 50,
-      "field_type_id": 1
-    },
-    {
-      "id_field": 51,
-      "field_type_id": 1
-    },
-    {
-      "id_field": 52,
-      "field_type_id": 1
-    },
-    {
-      "id_field": 53,
-      "field_type_id": 1
-    },
-    {
-      "id_field": 54,
-      "field_type_id": 1
-    },
-    {
-      "id_field": 55,
-      "field_type_id": 1
-    },
-    {
-      "id_field": 56,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 57,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 58,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 59,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 60,
-      "field_type_id": 5
-    },
-    {
-      "id_field": 61,
-      "field_type_id": 1
-    },
-    {
-      "id_field": 62,
-      "field_type_id": 1
-    },
-    {
-      "id_field": 63,
-      "field_type_id": 1
-    },
-    {
-      "id_field": 64,
+      "x": -1,
+      "y": 1,
       "field_type_id": 2
     },
     {
-      "id_field": 65,
-      "field_type_id": 2
-    },
-    {
-      "id_field": 66,
-      "field_type_id": 2
-    },
-    {
-      "id_field": 67,
+      "x": 1,
+      "y": -1,
       "field_type_id": 3
     },
     {
-      "id_field": 68,
+      "x": -1,
+      "y": -1,
+      "field_type_id": 4
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "field_type_id": 1
+    },
+    {
+      "x": -1,
+      "y": 2,
+      "field_type_id": 1
+    },
+    {
+      "x": 1,
+      "y": -2,
+      "field_type_id": 1
+    },
+    {
+      "x": -1,
+      "y": -2,
+      "field_type_id": 1
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "field_type_id": 1
+    },
+    {
+      "x": -1,
+      "y": 3,
+      "field_type_id": 1
+    },
+    {
+      "x": 1,
+      "y": -3,
+      "field_type_id": 1
+    },
+    {
+      "x": -1,
+      "y": -3,
+      "field_type_id": 1
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "field_type_id": 1
+    },
+    {
+      "x": -1,
+      "y": 4,
+      "field_type_id": 1
+    },
+    {
+      "x": 1,
+      "y": -4,
+      "field_type_id": 1
+    },
+    {
+      "x": -1,
+      "y": -4,
+      "field_type_id": 1
+    },
+    {
+      "x": 1,
+      "y": 5,
+      "field_type_id": 1
+    },
+    {
+      "x": -1,
+      "y": 5,
+      "field_type_id": 1
+    },
+    {
+      "x": 1,
+      "y": -5,
+      "field_type_id": 1
+    },
+    {
+      "x": -1,
+      "y": -5,
+      "field_type_id": 1
+    },
+    {
+      "x": 1,
+      "y": 6,
+      "field_type_id": 1
+    },
+    {
+      "x": -1,
+      "y": 6,
+      "field_type_id": 1
+    },
+    {
+      "x": 1,
+      "y": -6,
+      "field_type_id": 1
+    },
+    {
+      "x": -1,
+      "y": -6,
+      "field_type_id": 1
+    },
+    {
+      "x": 1,
+      "y": 7,
+      "field_type_id": 1
+    },
+    {
+      "x": -1,
+      "y": 7,
+      "field_type_id": 1
+    },
+    {
+      "x": 1,
+      "y": -7,
+      "field_type_id": 1
+    },
+    {
+      "x": -1,
+      "y": -7,
+      "field_type_id": 1
+    },
+    {
+      "x": 1,
+      "y": 8,
+      "field_type_id": 1
+    },
+    {
+      "x": -1,
+      "y": 8,
+      "field_type_id": 1
+    },
+    {
+      "x": 1,
+      "y": -8,
+      "field_type_id": 1
+    },
+    {
+      "x": -1,
+      "y": -8,
+      "field_type_id": 1
+    },
+    {
+      "x": 1,
+      "y": 9,
+      "field_type_id": 1
+    },
+    {
+      "x": -1,
+      "y": 9,
+      "field_type_id": 1
+    },
+    {
+      "x": 1,
+      "y": -9,
+      "field_type_id": 1
+    },
+    {
+      "x": -1,
+      "y": -9,
+      "field_type_id": 1
+    },
+    {
+      "x": 1,
+      "y": 10,
+      "field_type_id": 1
+    },
+    {
+      "x": -1,
+      "y": 10,
+      "field_type_id": 1
+    },
+    {
+      "x": 1,
+      "y": -10,
+      "field_type_id": 1
+    },
+    {
+      "x": -1,
+      "y": -10,
+      "field_type_id": 1
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "field_type_id": 1
+    },
+    {
+      "x": -2,
+      "y": 1,
+      "field_type_id": 1
+    },
+    {
+      "x": 2,
+      "y": -1,
+      "field_type_id": 1
+    },
+    {
+      "x": -2,
+      "y": -1,
+      "field_type_id": 1
+    },
+    {
+      "x": 2,
+      "y": 2,
+      "field_type_id": 1
+    },
+    {
+      "x": -2,
+      "y": 2,
+      "field_type_id": 1
+    },
+    {
+      "x": 2,
+      "y": -2,
+      "field_type_id": 1
+    },
+    {
+      "x": -2,
+      "y": -2,
+      "field_type_id": 1
+    },
+    {
+      "x": 2,
+      "y": 3,
+      "field_type_id": 1
+    },
+    {
+      "x": -2,
+      "y": 3,
+      "field_type_id": 1
+    },
+    {
+      "x": 2,
+      "y": -3,
+      "field_type_id": 1
+    },
+    {
+      "x": -2,
+      "y": -3,
+      "field_type_id": 1
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "field_type_id": 1
+    },
+    {
+      "x": -2,
+      "y": 4,
+      "field_type_id": 1
+    },
+    {
+      "x": 2,
+      "y": -4,
+      "field_type_id": 1
+    },
+    {
+      "x": -2,
+      "y": -4,
+      "field_type_id": 1
+    },
+    {
+      "x": 2,
+      "y": 5,
+      "field_type_id": 1
+    },
+    {
+      "x": -2,
+      "y": 5,
+      "field_type_id": 1
+    },
+    {
+      "x": 2,
+      "y": -5,
+      "field_type_id": 1
+    },
+    {
+      "x": -2,
+      "y": -5,
+      "field_type_id": 1
+    },
+    {
+      "x": 2,
+      "y": 6,
+      "field_type_id": 1
+    },
+    {
+      "x": -2,
+      "y": 6,
       "field_type_id": 1
     },
     {
-      "id_field": 69,
+      "x": 2,
+      "y": -6,
       "field_type_id": 1
     },
     {
-      "id_field": 70,
+      "x": -2,
+      "y": -6,
       "field_type_id": 1
     },
     {
-      "id_field": 71,
+      "x": 2,
+      "y": 7,
       "field_type_id": 1
     },
     {
-      "id_field": 72,
+      "x": -2,
+      "y": 7,
       "field_type_id": 1
     },
     {
-      "id_field": 73,
+      "x": 2,
+      "y": -7,
       "field_type_id": 1
     },
     {
-      "id_field": 74,
+      "x": -2,
+      "y": -7,
       "field_type_id": 1
     },
     {
-      "id_field": 75,
+      "x": 2,
+      "y": 8,
       "field_type_id": 1
     },
     {
-      "id_field": 76,
+      "x": -2,
+      "y": 8,
       "field_type_id": 1
     },
     {
-      "id_field": 77,
+      "x": 2,
+      "y": -8,
       "field_type_id": 1
     },
     {
-      "id_field": 78,
+      "x": -2,
+      "y": -8,
       "field_type_id": 1
     },
     {
-      "id_field": 79,
+      "x": 2,
+      "y": 9,
       "field_type_id": 1
     },
     {
-      "id_field": 80,
+      "x": -2,
+      "y": 9,
       "field_type_id": 1
     },
     {
-      "id_field": 81,
+      "x": 2,
+      "y": -9,
       "field_type_id": 1
     },
     {
-      "id_field": 82,
+      "x": -2,
+      "y": -9,
       "field_type_id": 1
     },
     {
-      "id_field": 83,
+      "x": 2,
+      "y": 10,
       "field_type_id": 1
     },
     {
-      "id_field": 84,
+      "x": -2,
+      "y": 10,
       "field_type_id": 1
     },
     {
-      "id_field": 85,
+      "x": 2,
+      "y": -10,
       "field_type_id": 1
     },
     {
-      "id_field": 86,
+      "x": -2,
+      "y": -10,
       "field_type_id": 1
     },
     {
-      "id_field": 87,
-      "field_type_id": 2
+      "x": 3,
+      "y": 1,
+      "field_type_id": 1
+    },
+    {
+      "x": -3,
+      "y": 1,
+      "field_type_id": 1
+    },
+    {
+      "x": 3,
+      "y": -1,
+      "field_type_id": 1
+    },
+    {
+      "x": -3,
+      "y": -1,
+      "field_type_id": 1
+    },
+    {
+      "x": 3,
+      "y": 2,
+      "field_type_id": 1
+    },
+    {
+      "x": -3,
+      "y": 2,
+      "field_type_id": 1
+    },
+    {
+      "x": 3,
+      "y": -2,
+      "field_type_id": 1
     },
     {
-      "id_field": 88,
-      "field_type_id": 3
+      "x": -3,
+      "y": -2,
+      "field_type_id": 1
     },
     {
-      "id_field": 89,
+      "x": 3,
+      "y": 3,
       "field_type_id": 1
     },
     {
-      "id_field": 90,
+      "x": -3,
+      "y": 3,
       "field_type_id": 1
     },
     {
-      "id_field": 91,
+      "x": 3,
+      "y": -3,
       "field_type_id": 1
     },
     {
-      "id_field": 92,
+      "x": -3,
+      "y": -3,
       "field_type_id": 1
     },
     {
-      "id_field": 93,
-      "field_type_id": 3
+      "x": 3,
+      "y": 4,
+      "field_type_id": 1
     },
     {
-      "id_field": 94,
+      "x": -3,
+      "y": 4,
       "field_type_id": 1
     },
     {
-      "id_field": 95,
+      "x": 3,
+      "y": -4,
       "field_type_id": 1
     },
     {
-      "id_field": 96,
+      "x": -3,
+      "y": -4,
       "field_type_id": 1
     },
     {
-      "id_field": 97,
+      "x": 3,
+      "y": 5,
       "field_type_id": 1
     },
     {
-      "id_field": 98,
+      "x": -3,
+      "y": 5,
       "field_type_id": 1
     },
     {
-      "id_field": 99,
+      "x": 3,
+      "y": -5,
       "field_type_id": 1
     },
     {
-      "id_field": 100,
+      "x": -3,
+      "y": -5,
       "field_type_id": 1
     },
     {
-      "id_field": 101,
+      "x": 3,
+      "y": 6,
       "field_type_id": 1
     },
     {
-      "id_field": 102,
+      "x": -3,
+      "y": 6,
       "field_type_id": 1
     },
     {
-      "id_field": 103,
+      "x": 3,
+      "y": -6,
       "field_type_id": 1
     },
     {
-      "id_field": 104,
+      "x": -3,
+      "y": -6,
       "field_type_id": 1
     },
     {
-      "id_field": 105,
+      "x": 3,
+      "y": 7,
       "field_type_id": 1
     },
     {
-      "id_field": 106,
+      "x": -3,
+      "y": 7,
       "field_type_id": 1
     },
     {
-      "id_field": 107,
+      "x": 3,
+      "y": -7,
       "field_type_id": 1
     },
     {
-      "id_field": 108,
-      "field_type_id": 2
+      "x": -3,
+      "y": -7,
+      "field_type_id": 1
     },
     {
-      "id_field": 109,
-      "field_type_id": 2
+      "x": 3,
+      "y": 8,
+      "field_type_id": 1
     },
     {
-      "id_field": 110,
-      "field_type_id": 2
+      "x": -3,
+      "y": 8,
+      "field_type_id": 1
     },
     {
-      "id_field": 111,
-      "field_type_id": 2
+      "x": 3,
+      "y": -8,
+      "field_type_id": 1
     },
     {
-      "id_field": 112,
-      "field_type_id": 2
+      "x": -3,
+      "y": -8,
+      "field_type_id": 1
     },
     {
-      "id_field": 113,
-      "field_type_id": 3
+      "x": 3,
+      "y": 9,
+      "field_type_id": 1
     },
     {
-      "id_field": 114,
+      "x": -3,
+      "y": 9,
       "field_type_id": 1
     },
     {
-      "id_field": 115,
+      "x": 3,
+      "y": -9,
       "field_type_id": 1
     },
     {
-      "id_field": 116,
+      "x": -3,
+      "y": -9,
       "field_type_id": 1
     },
     {
-      "id_field": 117,
+      "x": 3,
+      "y": 10,
       "field_type_id": 1
     },
     {
-      "id_field": 118,
+      "x": -3,
+      "y": 10,
       "field_type_id": 1
     },
     {
-      "id_field": 119,
+      "x": 3,
+      "y": -10,
       "field_type_id": 1
     },
     {
-      "id_field": 120,
+      "x": -3,
+      "y": -10,
       "field_type_id": 1
     },
     {
-      "id_field": 121,
+      "x": 4,
+      "y": 1,
       "field_type_id": 1
     },
     {
-      "id_field": 122,
+      "x": -4,
+      "y": 1,
       "field_type_id": 1
     },
     {
-      "id_field": 123,
+      "x": 4,
+      "y": -1,
       "field_type_id": 1
     },
     {
-      "id_field": 124,
+      "x": -4,
+      "y": -1,
       "field_type_id": 1
     },
     {
-      "id_field": 125,
+      "x": 4,
+      "y": 2,
       "field_type_id": 1
     },
     {
-      "id_field": 126,
+      "x": -4,
+      "y": 2,
       "field_type_id": 1
     },
     {
-      "id_field": 127,
+      "x": 4,
+      "y": -2,
       "field_type_id": 1
     },
     {
-      "id_field": 128,
+      "x": -4,
+      "y": -2,
       "field_type_id": 1
     },
     {
-      "id_field": 129,
+      "x": 4,
+      "y": 3,
       "field_type_id": 1
     },
     {
-      "id_field": 130,
+      "x": -4,
+      "y": 3,
       "field_type_id": 1
     },
     {
-      "id_field": 131,
+      "x": 4,
+      "y": -3,
       "field_type_id": 1
     },
     {
-      "id_field": 132,
+      "x": -4,
+      "y": -3,
       "field_type_id": 1
     },
     {
-      "id_field": 133,
-      "field_type_id": 3
+      "x": 4,
+      "y": 4,
+      "field_type_id": 1
     },
     {
-      "id_field": 134,
+      "x": -4,
+      "y": 4,
       "field_type_id": 1
     },
     {
-      "id_field": 135,
+      "x": 4,
+      "y": -4,
       "field_type_id": 1
     },
     {
-      "id_field": 136,
+      "x": -4,
+      "y": -4,
       "field_type_id": 1
     },
     {
-      "id_field": 137,
+      "x": 4,
+      "y": 5,
       "field_type_id": 1
     },
     {
-      "id_field": 138,
+      "x": -4,
+      "y": 5,
       "field_type_id": 1
     },
     {
-      "id_field": 139,
+      "x": 4,
+      "y": -5,
       "field_type_id": 1
     },
     {
-      "id_field": 140,
+      "x": -4,
+      "y": -5,
       "field_type_id": 1
     },
     {
-      "id_field": 141,
+      "x": 4,
+      "y": 6,
       "field_type_id": 1
     },
     {
-      "id_field": 142,
+      "x": -4,
+      "y": 6,
       "field_type_id": 1
     },
     {
-      "id_field": 143,
+      "x": 4,
+      "y": -6,
       "field_type_id": 1
     },
     {
-      "id_field": 144,
+      "x": -4,
+      "y": -6,
       "field_type_id": 1
     },
     {
-      "id_field": 145,
+      "x": 4,
+      "y": 7,
       "field_type_id": 1
     },
     {
-      "id_field": 146,
+      "x": -4,
+      "y": 7,
       "field_type_id": 1
     },
     {
-      "id_field": 147,
+      "x": 4,
+      "y": -7,
       "field_type_id": 1
     },
     {
-      "id_field": 148,
+      "x": -4,
+      "y": -7,
       "field_type_id": 1
     },
     {
-      "id_field": 149,
+      "x": 4,
+      "y": 8,
       "field_type_id": 1
     },
     {
-      "id_field": 150,
+      "x": -4,
+      "y": 8,
       "field_type_id": 1
     },
     {
-      "id_field": 151,
+      "x": 4,
+      "y": -8,
       "field_type_id": 1
     },
     {
-      "id_field": 152,
+      "x": -4,
+      "y": -8,
       "field_type_id": 1
     },
     {
-      "id_field": 153,
-      "field_type_id": 3
+      "x": 4,
+      "y": 9,
+      "field_type_id": 1
     },
     {
-      "id_field": 154,
-      "field_type_id": 2
+      "x": -4,
+      "y": 9,
+      "field_type_id": 1
     },
     {
-      "id_field": 155,
+      "x": 4,
+      "y": -9,
       "field_type_id": 1
     },
     {
-      "id_field": 156,
+      "x": -4,
+      "y": -9,
       "field_type_id": 1
     },
     {
-      "id_field": 157,
+      "x": 4,
+      "y": 10,
       "field_type_id": 1
     },
     {
-      "id_field": 158,
+      "x": -4,
+      "y": 10,
       "field_type_id": 1
     },
     {
-      "id_field": 159,
+      "x": 4,
+      "y": -10,
       "field_type_id": 1
     },
     {
-      "id_field": 160,
+      "x": -4,
+      "y": -10,
       "field_type_id": 1
     },
     {
-      "id_field": 161,
+      "x": 5,
+      "y": 1,
       "field_type_id": 1
     },
     {
-      "id_field": 162,
+      "x": -5,
+      "y": 1,
       "field_type_id": 1
     },
     {
-      "id_field": 163,
+      "x": 5,
+      "y": -1,
       "field_type_id": 1
     },
     {
-      "id_field": 164,
+      "x": -5,
+      "y": -1,
       "field_type_id": 1
     },
     {
-      "id_field": 165,
+      "x": 5,
+      "y": 2,
       "field_type_id": 1
     },
     {
-      "id_field": 166,
+      "x": -5,
+      "y": 2,
       "field_type_id": 1
     },
     {
-      "id_field": 167,
+      "x": 5,
+      "y": -2,
       "field_type_id": 1
     },
     {
-      "id_field": 168,
+      "x": -5,
+      "y": -2,
       "field_type_id": 1
     },
     {
-      "id_field": 169,
+      "x": 5,
+      "y": 3,
       "field_type_id": 1
     },
     {
-      "id_field": 170,
+      "x": -5,
+      "y": 3,
       "field_type_id": 1
     },
     {
-      "id_field": 171,
+      "x": 5,
+      "y": -3,
       "field_type_id": 1
     },
     {
-      "id_field": 172,
+      "x": -5,
+      "y": -3,
       "field_type_id": 1
     },
     {
-      "id_field": 173,
+      "x": 5,
+      "y": 4,
       "field_type_id": 1
     },
     {
-      "id_field": 174,
-      "field_type_id": 3
+      "x": -5,
+      "y": 4,
+      "field_type_id": 1
     },
     {
-      "id_field": 175,
+      "x": 5,
+      "y": -4,
       "field_type_id": 1
     },
     {
-      "id_field": 176,
+      "x": -5,
+      "y": -4,
       "field_type_id": 1
     },
     {
-      "id_field": 177,
+      "x": 5,
+      "y": 5,
       "field_type_id": 1
     },
     {
-      "id_field": 178,
+      "x": -5,
+      "y": 5,
       "field_type_id": 1
     },
     {
-      "id_field": 179,
+      "x": 5,
+      "y": -5,
       "field_type_id": 1
     },
     {
-      "id_field": 180,
+      "x": -5,
+      "y": -5,
       "field_type_id": 1
     },
     {
-      "id_field": 181,
+      "x": 5,
+      "y": 6,
       "field_type_id": 1
     },
     {
-      "id_field": 182,
+      "x": -5,
+      "y": 6,
       "field_type_id": 1
     },
     {
-      "id_field": 183,
+      "x": 5,
+      "y": -6,
       "field_type_id": 1
     },
     {
-      "id_field": 184,
+      "x": -5,
+      "y": -6,
       "field_type_id": 1
     },
     {
-      "id_field": 185,
+      "x": 5,
+      "y": 7,
       "field_type_id": 1
     },
     {
-      "id_field": 186,
+      "x": -5,
+      "y": 7,
       "field_type_id": 1
     },
     {
-      "id_field": 187,
+      "x": 5,
+      "y": -7,
       "field_type_id": 1
     },
     {
-      "id_field": 188,
+      "x": -5,
+      "y": -7,
       "field_type_id": 1
     },
     {
-      "id_field": 189,
+      "x": 5,
+      "y": 8,
       "field_type_id": 1
     },
     {
-      "id_field": 190,
+      "x": -5,
+      "y": 8,
       "field_type_id": 1
     },
     {
-      "id_field": 191,
+      "x": 5,
+      "y": -8,
       "field_type_id": 1
     },
     {
-      "id_field": 192,
+      "x": -5,
+      "y": -8,
       "field_type_id": 1
     },
     {
-      "id_field": 193,
+      "x": 5,
+      "y": 9,
       "field_type_id": 1
     },
     {
-      "id_field": 194,
-      "field_type_id": 3
+      "x": -5,
+      "y": 9,
+      "field_type_id": 1
     },
     {
-      "id_field": 195,
+      "x": 5,
+      "y": -9,
       "field_type_id": 1
     },
     {
-      "id_field": 196,
+      "x": -5,
+      "y": -9,
       "field_type_id": 1
     },
     {
-      "id_field": 197,
+      "x": 5,
+      "y": 10,
       "field_type_id": 1
     },
     {
-      "id_field": 198,
+      "x": -5,
+      "y": 10,
       "field_type_id": 1
     },
     {
-      "id_field": 199,
+      "x": 5,
+      "y": -10,
       "field_type_id": 1
     },
     {
-      "id_field": 200,
+      "x": -5,
+      "y": -10,
       "field_type_id": 1
     },
     {
-      "id_field": 201,
+      "x": 6,
+      "y": 1,
       "field_type_id": 1
     },
     {
-      "id_field": 202,
+      "x": -6,
+      "y": 1,
       "field_type_id": 1
     },
     {
-      "id_field": 203,
+      "x": 6,
+      "y": -1,
       "field_type_id": 1
     },
     {
-      "id_field": 204,
-      "field_type_id": 2
+      "x": -6,
+      "y": -1,
+      "field_type_id": 1
     },
     {
-      "id_field": 205,
-      "field_type_id": 2
+      "x": 6,
+      "y": 2,
+      "field_type_id": 1
     },
     {
-      "id_field": 206,
-      "field_type_id": 2
+      "x": -6,
+      "y": 2,
+      "field_type_id": 1
     },
     {
-      "id_field": 207,
-      "field_type_id": 3
+      "x": 6,
+      "y": -2,
+      "field_type_id": 1
     },
     {
-      "id_field": 208,
+      "x": -6,
+      "y": -2,
       "field_type_id": 1
     },
     {
-      "id_field": 209,
+      "x": 6,
+      "y": 3,
       "field_type_id": 1
     },
     {
-      "id_field": 210,
+      "x": -6,
+      "y": 3,
       "field_type_id": 1
     },
     {
-      "id_field": 211,
+      "x": 6,
+      "y": -3,
       "field_type_id": 1
     },
     {
-      "id_field": 212,
+      "x": -6,
+      "y": -3,
       "field_type_id": 1
     },
     {
-      "id_field": 213,
+      "x": 6,
+      "y": 4,
       "field_type_id": 1
     },
     {
-      "id_field": 214,
-      "field_type_id": 3
+      "x": -6,
+      "y": 4,
+      "field_type_id": 1
     },
     {
-      "id_field": 215,
+      "x": 6,
+      "y": -4,
       "field_type_id": 1
     },
     {
-      "id_field": 216,
+      "x": -6,
+      "y": -4,
       "field_type_id": 1
     },
     {
-      "id_field": 217,
+      "x": 6,
+      "y": 5,
       "field_type_id": 1
     },
     {
-      "id_field": 218,
+      "x": -6,
+      "y": 5,
       "field_type_id": 1
     },
     {
-      "id_field": 219,
+      "x": 6,
+      "y": -5,
       "field_type_id": 1
     },
     {
-      "id_field": 220,
+      "x": -6,
+      "y": -5,
       "field_type_id": 1
     },
     {
-      "id_field": 221,
+      "x": 6,
+      "y": 6,
       "field_type_id": 1
     },
     {
-      "id_field": 222,
+      "x": -6,
+      "y": 6,
       "field_type_id": 1
     },
     {
-      "id_field": 223,
+      "x": 6,
+      "y": -6,
       "field_type_id": 1
     },
     {
-      "id_field": 224,
+      "x": -6,
+      "y": -6,
       "field_type_id": 1
     },
     {
-      "id_field": 225,
+      "x": 6,
+      "y": 7,
       "field_type_id": 1
     },
     {
-      "id_field": 226,
+      "x": -6,
+      "y": 7,
       "field_type_id": 1
     },
     {
-      "id_field": 227,
-      "field_type_id": 2
+      "x": 6,
+      "y": -7,
+      "field_type_id": 1
     },
     {
-      "id_field": 228,
-      "field_type_id": 2
+      "x": -6,
+      "y": -7,
+      "field_type_id": 1
     },
     {
-      "id_field": 229,
-      "field_type_id": 3
+      "x": 6,
+      "y": 8,
+      "field_type_id": 1
     },
     {
-      "id_field": 230,
+      "x": -6,
+      "y": 8,
       "field_type_id": 1
     },
     {
-      "id_field": 231,
+      "x": 6,
+      "y": -8,
       "field_type_id": 1
     },
     {
-      "id_field": 232,
+      "x": -6,
+      "y": -8,
       "field_type_id": 1
     },
     {
-      "id_field": 233,
+      "x": 6,
+      "y": 9,
       "field_type_id": 1
     },
     {
-      "id_field": 234,
-      "field_type_id": 3
+      "x": -6,
+      "y": 9,
+      "field_type_id": 1
     },
     {
-      "id_field": 235,
+      "x": 6,
+      "y": -9,
       "field_type_id": 1
     },
     {
-      "id_field": 236,
+      "x": -6,
+      "y": -9,
       "field_type_id": 1
     },
     {
-      "id_field": 237,
+      "x": 6,
+      "y": 10,
       "field_type_id": 1
     },
     {
-      "id_field": 238,
+      "x": -6,
+      "y": 10,
       "field_type_id": 1
     },
     {
-      "id_field": 239,
+      "x": 6,
+      "y": -10,
       "field_type_id": 1
     },
     {
-      "id_field": 240,
+      "x": -6,
+      "y": -10,
       "field_type_id": 1
     },
     {
-      "id_field": 241,
+      "x": 7,
+      "y": 1,
       "field_type_id": 1
     },
     {
-      "id_field": 242,
+      "x": -7,
+      "y": 1,
       "field_type_id": 1
     },
     {
-      "id_field": 243,
+      "x": 7,
+      "y": -1,
       "field_type_id": 1
     },
     {
-      "id_field": 244,
+      "x": -7,
+      "y": -1,
       "field_type_id": 1
     },
     {
-      "id_field": 245,
+      "x": 7,
+      "y": 2,
       "field_type_id": 1
     },
     {
-      "id_field": 246,
+      "x": -7,
+      "y": 2,
       "field_type_id": 1
     },
     {
-      "id_field": 247,
+      "x": 7,
+      "y": -2,
       "field_type_id": 1
     },
     {
-      "id_field": 248,
+      "x": -7,
+      "y": -2,
       "field_type_id": 1
     },
     {
-      "id_field": 249,
-      "field_type_id": 2
+      "x": 7,
+      "y": 3,
+      "field_type_id": 1
     },
     {
-      "id_field": 250,
-      "field_type_id": 2
+      "x": -7,
+      "y": 3,
+      "field_type_id": 1
     },
     {
-      "id_field": 251,
-      "field_type_id": 2
+      "x": 7,
+      "y": -3,
+      "field_type_id": 1
     },
     {
-      "id_field": 252,
-      "field_type_id": 2
+      "x": -7,
+      "y": -3,
+      "field_type_id": 1
     },
     {
-      "id_field": 253,
-      "field_type_id": 2
+      "x": 7,
+      "y": 4,
+      "field_type_id": 1
     },
     {
-      "id_field": 254,
-      "field_type_id": 3
+      "x": -7,
+      "y": 4,
+      "field_type_id": 1
     },
     {
-      "id_field": 255,
-      "field_type_id": 2
+      "x": 7,
+      "y": -4,
+      "field_type_id": 1
     },
     {
-      "id_field": 256,
-      "field_type_id": 2
+      "x": -7,
+      "y": -4,
+      "field_type_id": 1
     },
     {
-      "id_field": 257,
+      "x": 7,
+      "y": 5,
       "field_type_id": 1
     },
     {
-      "id_field": 258,
+      "x": -7,
+      "y": 5,
       "field_type_id": 1
     },
     {
-      "id_field": 259,
+      "x": 7,
+      "y": -5,
       "field_type_id": 1
     },
     {
-      "id_field": 260,
+      "x": -7,
+      "y": -5,
       "field_type_id": 1
     },
     {
-      "id_field": 261,
+      "x": 7,
+      "y": 6,
       "field_type_id": 1
     },
     {
-      "id_field": 262,
+      "x": -7,
+      "y": 6,
       "field_type_id": 1
     },
     {
-      "id_field": 263,
+      "x": 7,
+      "y": -6,
       "field_type_id": 1
     },
     {
-      "id_field": 264,
+      "x": -7,
+      "y": -6,
       "field_type_id": 1
     },
     {
-      "id_field": 265,
+      "x": 7,
+      "y": 7,
       "field_type_id": 1
     },
     {
-      "id_field": 266,
+      "x": -7,
+      "y": 7,
       "field_type_id": 1
     },
     {
-      "id_field": 267,
+      "x": 7,
+      "y": -7,
       "field_type_id": 1
     },
     {
-      "id_field": 268,
+      "x": -7,
+      "y": -7,
       "field_type_id": 1
     },
     {
-      "id_field": 269,
+      "x": 7,
+      "y": 8,
       "field_type_id": 1
     },
     {
-      "id_field": 270,
-      "field_type_id": 3
+      "x": -7,
+      "y": 8,
+      "field_type_id": 1
     },
     {
-      "id_field": 271,
+      "x": 7,
+      "y": -8,
       "field_type_id": 1
     },
     {
-      "id_field": 272,
+      "x": -7,
+      "y": -8,
       "field_type_id": 1
     },
     {
-      "id_field": 273,
+      "x": 7,
+      "y": 9,
       "field_type_id": 1
     },
     {
-      "id_field": 274,
+      "x": -7,
+      "y": 9,
       "field_type_id": 1
     },
     {
-      "id_field": 275,
+      "x": 7,
+      "y": -9,
       "field_type_id": 1
     },
     {
-      "id_field": 276,
-      "field_type_id": 3
+      "x": -7,
+      "y": -9,
+      "field_type_id": 1
     },
     {
-      "id_field": 277,
+      "x": 7,
+      "y": 10,
       "field_type_id": 1
     },
     {
-      "id_field": 278,
+      "x": -7,
+      "y": 10,
       "field_type_id": 1
     },
     {
-      "id_field": 279,
+      "x": 7,
+      "y": -10,
       "field_type_id": 1
     },
     {
-      "id_field": 280,
+      "x": -7,
+      "y": -10,
       "field_type_id": 1
     },
     {
-      "id_field": 281,
+      "x": 8,
+      "y": 1,
       "field_type_id": 1
     },
     {
-      "id_field": 282,
+      "x": -8,
+      "y": 1,
       "field_type_id": 1
     },
     {
-      "id_field": 283,
+      "x": 8,
+      "y": -1,
       "field_type_id": 1
     },
     {
-      "id_field": 284,
+      "x": -8,
+      "y": -1,
       "field_type_id": 1
     },
     {
-      "id_field": 285,
+      "x": 8,
+      "y": 2,
       "field_type_id": 1
     },
     {
-      "id_field": 286,
+      "x": -8,
+      "y": 2,
       "field_type_id": 1
     },
     {
-      "id_field": 287,
+      "x": 8,
+      "y": -2,
       "field_type_id": 1
     },
     {
-      "id_field": 288,
+      "x": -8,
+      "y": -2,
       "field_type_id": 1
     },
     {
-      "id_field": 289,
-      "field_type_id": 2
+      "x": 8,
+      "y": 3,
+      "field_type_id": 1
     },
     {
-      "id_field": 290,
-      "field_type_id": 3
+      "x": -8,
+      "y": 3,
+      "field_type_id": 1
     },
     {
-      "id_field": 291,
+      "x": 8,
+      "y": -3,
       "field_type_id": 1
     },
     {
-      "id_field": 292,
+      "x": -8,
+      "y": -3,
       "field_type_id": 1
     },
     {
-      "id_field": 293,
+      "x": 8,
+      "y": 4,
       "field_type_id": 1
     },
     {
-      "id_field": 294,
+      "x": -8,
+      "y": 4,
       "field_type_id": 1
     },
     {
-      "id_field": 295,
+      "x": 8,
+      "y": -4,
       "field_type_id": 1
     },
     {
-      "id_field": 296,
-      "field_type_id": 3
+      "x": -8,
+      "y": -4,
+      "field_type_id": 1
     },
     {
-      "id_field": 297,
+      "x": 8,
+      "y": 5,
       "field_type_id": 1
     },
     {
-      "id_field": 298,
+      "x": -8,
+      "y": 5,
       "field_type_id": 1
     },
     {
-      "id_field": 299,
+      "x": 8,
+      "y": -5,
       "field_type_id": 1
     },
     {
-      "id_field": 300,
+      "x": -8,
+      "y": -5,
       "field_type_id": 1
     },
     {
-      "id_field": 301,
+      "x": 8,
+      "y": 6,
       "field_type_id": 1
     },
     {
-      "id_field": 302,
+      "x": -8,
+      "y": 6,
       "field_type_id": 1
     },
     {
-      "id_field": 303,
+      "x": 8,
+      "y": -6,
       "field_type_id": 1
     },
     {
-      "id_field": 304,
+      "x": -8,
+      "y": -6,
       "field_type_id": 1
     },
     {
-      "id_field": 305,
+      "x": 8,
+      "y": 7,
       "field_type_id": 1
     },
     {
-      "id_field": 306,
+      "x": -8,
+      "y": 7,
       "field_type_id": 1
     },
     {
-      "id_field": 307,
+      "x": 8,
+      "y": -7,
       "field_type_id": 1
     },
     {
-      "id_field": 308,
+      "x": -8,
+      "y": -7,
       "field_type_id": 1
     },
     {
-      "id_field": 309,
-      "field_type_id": 3
+      "x": 8,
+      "y": 8,
+      "field_type_id": 1
     },
     {
-      "id_field": 310,
+      "x": -8,
+      "y": 8,
       "field_type_id": 1
     },
     {
-      "id_field": 311,
+      "x": 8,
+      "y": -8,
       "field_type_id": 1
     },
     {
-      "id_field": 312,
+      "x": -8,
+      "y": -8,
       "field_type_id": 1
     },
     {
-      "id_field": 313,
+      "x": 8,
+      "y": 9,
       "field_type_id": 1
     },
     {
-      "id_field": 314,
+      "x": -8,
+      "y": 9,
       "field_type_id": 1
     },
     {
-      "id_field": 315,
+      "x": 8,
+      "y": -9,
       "field_type_id": 1
     },
     {
-      "id_field": 316,
-      "field_type_id": 3
+      "x": -8,
+      "y": -9,
+      "field_type_id": 1
     },
     {
-      "id_field": 317,
-      "field_type_id": 2
+      "x": 8,
+      "y": 10,
+      "field_type_id": 1
     },
     {
-      "id_field": 318,
+      "x": -8,
+      "y": 10,
       "field_type_id": 1
     },
     {
-      "id_field": 319,
-      "field_type_id": 3
+      "x": 8,
+      "y": -10,
+      "field_type_id": 1
     },
     {
-      "id_field": 320,
+      "x": -8,
+      "y": -10,
       "field_type_id": 1
     },
     {
-      "id_field": 321,
+      "x": 9,
+      "y": 1,
       "field_type_id": 1
     },
     {
-      "id_field": 322,
+      "x": -9,
+      "y": 1,
       "field_type_id": 1
     },
     {
-      "id_field": 323,
+      "x": 9,
+      "y": -1,
       "field_type_id": 1
     },
     {
-      "id_field": 324,
+      "x": -9,
+      "y": -1,
       "field_type_id": 1
     },
     {
-      "id_field": 325,
+      "x": 9,
+      "y": 2,
       "field_type_id": 1
     },
     {
-      "id_field": 326,
+      "x": -9,
+      "y": 2,
       "field_type_id": 1
     },
     {
-      "id_field": 327,
+      "x": 9,
+      "y": -2,
       "field_type_id": 1
     },
     {
-      "id_field": 328,
+      "x": -9,
+      "y": -2,
       "field_type_id": 1
     },
     {
-      "id_field": 329,
+      "x": 9,
+      "y": 3,
       "field_type_id": 1
     },
     {
-      "id_field": 330,
+      "x": -9,
+      "y": 3,
       "field_type_id": 1
     },
     {
-      "id_field": 331,
+      "x": 9,
+      "y": -3,
       "field_type_id": 1
     },
     {
-      "id_field": 332,
+      "x": -9,
+      "y": -3,
       "field_type_id": 1
     },
     {
-      "id_field": 333,
+      "x": 9,
+      "y": 4,
       "field_type_id": 1
     },
     {
-      "id_field": 334,
+      "x": -9,
+      "y": 4,
       "field_type_id": 1
     },
     {
-      "id_field": 335,
+      "x": 9,
+      "y": -4,
       "field_type_id": 1
     },
     {
-      "id_field": 336,
+      "x": -9,
+      "y": -4,
       "field_type_id": 1
     },
     {
-      "id_field": 337,
+      "x": 9,
+      "y": 5,
       "field_type_id": 1
     },
     {
-      "id_field": 338,
+      "x": -9,
+      "y": 5,
       "field_type_id": 1
     },
     {
-      "id_field": 339,
+      "x": 9,
+      "y": -5,
       "field_type_id": 1
     },
     {
-      "id_field": 340,
+      "x": -9,
+      "y": -5,
       "field_type_id": 1
     },
     {
-      "id_field": 341,
+      "x": 9,
+      "y": 6,
       "field_type_id": 1
     },
     {
-      "id_field": 342,
+      "x": -9,
+      "y": 6,
       "field_type_id": 1
     },
     {
-      "id_field": 343,
+      "x": 9,
+      "y": -6,
       "field_type_id": 1
     },
     {
-      "id_field": 344,
+      "x": -9,
+      "y": -6,
       "field_type_id": 1
     },
     {
-      "id_field": 345,
+      "x": 9,
+      "y": 7,
       "field_type_id": 1
     },
     {
-      "id_field": 346,
+      "x": -9,
+      "y": 7,
       "field_type_id": 1
     },
     {
-      "id_field": 347,
+      "x": 9,
+      "y": -7,
       "field_type_id": 1
     },
     {
-      "id_field": 348,
+      "x": -9,
+      "y": -7,
       "field_type_id": 1
     },
     {
-      "id_field": 349,
+      "x": 9,
+      "y": 8,
       "field_type_id": 1
     },
     {
-      "id_field": 350,
+      "x": -9,
+      "y": 8,
       "field_type_id": 1
     },
     {
-      "id_field": 351,
+      "x": 9,
+      "y": -8,
       "field_type_id": 1
     },
     {
-      "id_field": 352,
+      "x": -9,
+      "y": -8,
       "field_type_id": 1
     },
     {
-      "id_field": 353,
+      "x": 9,
+      "y": 9,
       "field_type_id": 1
     },
     {
-      "id_field": 354,
+      "x": -9,
+      "y": 9,
       "field_type_id": 1
     },
     {
-      "id_field": 355,
+      "x": 9,
+      "y": -9,
       "field_type_id": 1
     },
     {
-      "id_field": 356,
+      "x": -9,
+      "y": -9,
       "field_type_id": 1
     },
     {
-      "id_field": 357,
+      "x": 9,
+      "y": 10,
       "field_type_id": 1
     },
     {
-      "id_field": 358,
+      "x": -9,
+      "y": 10,
       "field_type_id": 1
     },
     {
-      "id_field": 359,
+      "x": 9,
+      "y": -10,
       "field_type_id": 1
     },
     {
-      "id_field": 360,
+      "x": -9,
+      "y": -10,
       "field_type_id": 1
     },
     {
-      "id_field": 361,
+      "x": 10,
+      "y": 1,
       "field_type_id": 1
     },
     {
-      "id_field": 362,
+      "x": -10,
+      "y": 1,
       "field_type_id": 1
     },
     {
-      "id_field": 363,
+      "x": 10,
+      "y": -1,
       "field_type_id": 1
     },
     {
-      "id_field": 364,
+      "x": -10,
+      "y": -1,
       "field_type_id": 1
     },
     {
-      "id_field": 365,
+      "x": 10,
+      "y": 2,
       "field_type_id": 1
     },
     {
-      "id_field": 366,
+      "x": -10,
+      "y": 2,
       "field_type_id": 1
     },
     {
-      "id_field": 367,
+      "x": 10,
+      "y": -2,
       "field_type_id": 1
     },
     {
-      "id_field": 368,
+      "x": -10,
+      "y": -2,
       "field_type_id": 1
     },
     {
-      "id_field": 369,
+      "x": 10,
+      "y": 3,
       "field_type_id": 1
     },
     {
-      "id_field": 370,
+      "x": -10,
+      "y": 3,
       "field_type_id": 1
     },
     {
-      "id_field": 371,
+      "x": 10,
+      "y": -3,
       "field_type_id": 1
     },
     {
-      "id_field": 372,
+      "x": -10,
+      "y": -3,
       "field_type_id": 1
     },
     {
-      "id_field": 373,
+      "x": 10,
+      "y": 4,
       "field_type_id": 1
     },
     {
-      "id_field": 374,
+      "x": -10,
+      "y": 4,
       "field_type_id": 1
     },
     {
-      "id_field": 375,
+      "x": 10,
+      "y": -4,
       "field_type_id": 1
     },
     {
-      "id_field": 376,
+      "x": -10,
+      "y": -4,
       "field_type_id": 1
     },
     {
-      "id_field": 377,
+      "x": 10,
+      "y": 5,
       "field_type_id": 1
     },
     {
-      "id_field": 378,
+      "x": -10,
+      "y": 5,
       "field_type_id": 1
     },
     {
-      "id_field": 379,
+      "x": 10,
+      "y": -5,
       "field_type_id": 1
     },
     {
-      "id_field": 380,
+      "x": -10,
+      "y": -5,
       "field_type_id": 1
     },
     {
-      "id_field": 381,
+      "x": 10,
+      "y": 6,
       "field_type_id": 1
     },
     {
-      "id_field": 382,
+      "x": -10,
+      "y": 6,
       "field_type_id": 1
     },
     {
-      "id_field": 383,
+      "x": 10,
+      "y": -6,
       "field_type_id": 1
     },
     {
-      "id_field": 384,
+      "x": -10,
+      "y": -6,
       "field_type_id": 1
     },
     {
-      "id_field": 385,
+      "x": 10,
+      "y": 7,
       "field_type_id": 1
     },
     {
-      "id_field": 386,
+      "x": -10,
+      "y": 7,
       "field_type_id": 1
     },
     {
-      "id_field": 387,
+      "x": 10,
+      "y": -7,
       "field_type_id": 1
     },
     {
-      "id_field": 388,
+      "x": -10,
+      "y": -7,
       "field_type_id": 1
     },
     {
-      "id_field": 389,
+      "x": 10,
+      "y": 8,
       "field_type_id": 1
     },
     {
-      "id_field": 390,
+      "x": -10,
+      "y": 8,
       "field_type_id": 1
     },
     {
-      "id_field": 391,
+      "x": 10,
+      "y": -8,
       "field_type_id": 1
     },
     {
-      "id_field": 392,
+      "x": -10,
+      "y": -8,
       "field_type_id": 1
     },
     {
-      "id_field": 393,
+      "x": 10,
+      "y": 9,
       "field_type_id": 1
     },
     {
-      "id_field": 394,
+      "x": -10,
+      "y": 9,
       "field_type_id": 1
     },
     {
-      "id_field": 395,
+      "x": 10,
+      "y": -9,
       "field_type_id": 1
     },
     {
-      "id_field": 396,
+      "x": -10,
+      "y": -9,
       "field_type_id": 1
     },
     {
-      "id_field": 397,
+      "x": 10,
+      "y": 10,
       "field_type_id": 1
     },
     {
-      "id_field": 398,
+      "x": -10,
+      "y": 10,
       "field_type_id": 1
     },
     {
-      "id_field": 399,
+      "x": 10,
+      "y": -10,
       "field_type_id": 1
     },
     {
-      "id_field": 400,
+      "x": -10,
+      "y": -10,
       "field_type_id": 1
     }
   ]

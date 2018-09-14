@@ -59,18 +59,21 @@
   "SpawnedCreature": [
     {
       "id_spawned_creature": 0,
-      "spawned_creature_field_id": 44,
+      "x": 44,
+      "y": 1,
       "spawned_creature_type_id": 0
     },
     {
       "id_spawned_creature": 1,
-      "spawned_creature_field_id": 56,
+      "x": 56,
+      "y": -1,
       "spawned_creature_type_id": 1,
       "custom_name": "Meldor"
     },
     {
       "id_spawned_creature": 2,
-      "spawned_creature_field_id": 33,
+      "x": 33,
+      "y": -23,
       "spawned_creature_type_id": 3,
       "custom_name": "Ornlu the wolf"
     }

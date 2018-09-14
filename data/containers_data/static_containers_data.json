@@ -2,17 +2,20 @@
   "Container": [
     {
       "container_type_id": 3,
-      "container_field_id": 45,
+      "x": 45,
+      "y": -12,
       "id_container": 1001
     },
     {
       "container_type_id": 3,
-      "container_field_id": 156,
+      "x": 56,
+      "y": -12,
       "id_container": 1002
     },
     {
       "container_type_id": 4,
-      "container_field_id": 367,
+      "x": -12,
+      "y": 23,
       "id_container": 1003
     }
   ]
