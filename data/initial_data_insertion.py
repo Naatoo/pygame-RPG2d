@@ -2,8 +2,10 @@ import json
 from collections import OrderedDict
 
 from database.dbtools import DbTool
-from game.objects.db_objects import FieldType, Field, CreatureGroup, CreatureType, SpawnedCreature, ContainerType,\
-    Container, BoundedItem, Item
+from game.objects.fields import FieldType, Field
+from game.objects.creatures import CreatureGroup, CreatureType, SpawnedCreature
+from game.objects.containers import ContainerType, Container
+from game.objects.items import BoundedItem, Item
 from tools.global_paths import MAP_DATA_FILE, CREATURES_DATA_FILE, ITEMS_DATA_FILE
 from tools.global_paths import CONTAINERS_TYPES_DATA_FILE, FIELD_CONTAINERS_DATA_FILE, CREATURES_CONTAINERS_DATA_FILE,\
     STATIC_CONTAINERS_DATA_FILE
