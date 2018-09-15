@@ -23,12 +23,13 @@ class CreatureType(CreatureTypeTable):
 class SpawnedCreature(SpawnedCreatureTable):
 
     def __repr__(self):
-        fmt = "SpawnedCreature(id={}, name={}, field_id={})"
-        return fmt.format(self.id_spawned_creature, self.name if self.name is not None else self.type.name, self.spawned_creature_field_id)
+        fmt = "SpawnedCreature(id={}, name={}, x={}, y={})"
+        return fmt.format(self.id_spawned_creature, self.name if self.name is not None else self.type.name,
+                          self.x, self.y)
 
     def __str__(self):
-        fmt = '{} stands on field {}'
-        return fmt.format(self.custom_name if self.custom_name is not None else self.type.name, self.spawned_creature_field_id)
+        fmt = '{} stands on field {},{}'
+        return fmt.format(self.custom_name if self.custom_name is not None else self.type.name, self.x, self.y)
 
     @property
     def type(self):
