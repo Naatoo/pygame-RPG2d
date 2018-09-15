@@ -1,6 +1,6 @@
 import pygame
 
-from src.game.items_to_display import tiles, player_icon
+from src.game.items_to_display import display_tiles, display_creatures
 from src.game.display import Display
 from src.game.move_actions import player_move
 
@@ -22,8 +22,8 @@ def game_loop():
 
         crashed = result
         game_display.get_display_window().fill(white)
-        tiles()
-        player_icon()
+        display_tiles()
+        display_creatures()
 
         pygame.display.update()
         clock.tick(60)

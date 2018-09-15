@@ -34,6 +34,7 @@ class CreatureTypeTable(Base):
 
     id_creature_type = Column(Integer, primary_key=True)
     name = Column(String)
+    image = Column(String)
     strength = Column(Integer)
     agility = Column(Integer)
     creature_group_id = Column(Integer, ForeignKey('CreatureGroup.id_creature_group'))
