@@ -3,31 +3,31 @@
     {
       "id_field_type": 1,
       "name": "grass",
-      "image": "grass0.png",
+      "image": "src/resources/image/fields/grass0.png",
       "accessible": true
     },
     {
       "id_field_type": 2,
       "name": "road1",
-      "image": "road1.png",
+      "image": "src/resources/image/fields/road1.png",
       "accessible": true
     },
     {
       "id_field_type": 3,
       "name": "road0",
-      "image": "road0.png",
+      "image": "src/resources/image/fields/road0.png",
       "accessible": true
     },
     {
       "id_field_type": 4,
       "name": "city",
-      "image": "cobble.png",
+      "image": "src/resources/image/fields/cobble.png",
       "accessible": true
     },
     {
       "id_field_type": 5,
       "name": "sea",
-      "image": "sea.png",
+      "image": "src/resources/image/fields/sea.png",
       "accessible": false
     }
   ]
