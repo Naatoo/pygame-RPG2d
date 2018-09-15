@@ -1,5 +1,5 @@
-from database.dbtools import DbTool
-from database.tables import CreatureGroupTable, CreatureTypeTable, SpawnedCreatureTable
+from src.database.dbtools import DbTool
+from src.database.tables import CreatureGroupTable, CreatureTypeTable, SpawnedCreatureTable
 
 
 class CreatureGroup(CreatureGroupTable):
@@ -17,7 +17,7 @@ class CreatureType(CreatureTypeTable):
 
     @property
     def group(self):
-        return DbTool().get_one_row(('game.objects.creatures', 'CreatureGroup', 'id_creature_group'), self.type_id)
+        return DbTool().get_one_row(('src.objects.creatures', 'CreatureGroup', 'id_creature_group'), self.type_id)
 
 
 class SpawnedCreature(SpawnedCreatureTable):
@@ -32,5 +32,5 @@ class SpawnedCreature(SpawnedCreatureTable):
 
     @property
     def type(self):
-        return DbTool().get_one_row(('game.objects.creatures', 'CreatureType', 'id_creature_type'),
+        return DbTool().get_one_row(('src.objects.creatures', 'CreatureType', 'id_creature_type'),
                                     self.spawned_creature_type_id)

@@ -1,4 +1,4 @@
-from game.operations.actions import Actions
+from src.operations.actions import Actions
 
 possible_actions_registry = []
 

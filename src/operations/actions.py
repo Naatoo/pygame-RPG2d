@@ -1,12 +1,12 @@
-import game.output.messages as messages
+import src.output.messages as messages
 
-from database.dbtools import DbTool
+from src.database.dbtools import DbTool
 
 
 class Actions:
 
     def __init__(self):
-        self.player = DbTool().get_one_row(('game.objects.creatures', 'SpawnedCreature', 'id_spawned_creature'), 0)
+        self.player = DbTool().get_one_row(('src.objects.creatures', 'SpawnedCreature', 'id_spawned_creature'), 0)
 
     def player_move(self, direction):
         fields_changer = {"w": -20, "s": 20, "a": -1, "d": 1}
@@ -17,7 +17,7 @@ class Actions:
             messages.forbidden_field_to_move(direction)
 
     def display_items(self):
-        field_container = DbTool().get_one_row(('game.objects.containers', 'Container', 'id_container'),
+        field_container = DbTool().get_one_row(('src.objects.containers', 'Container', 'id_container'),
                                                self.player.spawned_creature_field_id)
         if field_container.content:
             messages.items_on_the_ground({item.name: item.quantity for item in field_container.content})

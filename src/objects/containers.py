@@ -1,6 +1,6 @@
-from database.dbtools import DbTool
-from database.tables import ContainerTypeTable, ContainerTable
-from game.objects.items import Item, BoundedItem
+from src.database.dbtools import DbTool
+from src.database.tables import ContainerTypeTable, ContainerTable
+from src.objects.items import Item
 
 
 class ContainerType(ContainerTypeTable):
@@ -40,9 +40,9 @@ class Container(ContainerTable):
     @property
     def content(self):
         return [item for item in DbTool().get_all_rows(
-            ('game.objects.items', 'BoundedItem', 'container_id'), self.id_container)]
+            ('src.objects.items', 'BoundedItem', 'container_id'), self.id_container)]
 
     @property
     def type(self):
-        return DbTool().get_one_row(('game.objects.containers', 'ContainerType', 'id_container_type'),
+        return DbTool().get_one_row(('src.objects.containers', 'ContainerType', 'id_container_type'),
                                     self.container_type_id)

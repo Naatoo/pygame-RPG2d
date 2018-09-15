@@ -3,7 +3,7 @@ import importlib
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
-from database.base import Base
+from src.database.base import Base
 
 
 class Singleton(type):

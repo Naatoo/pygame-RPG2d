@@ -1,4 +1,4 @@
-from game.output.display_formatter import move_mes, items_mes
+from src.output.display_formatter import move_mes, items_mes
 
 
 def forbidden_field_to_move(direction: str):

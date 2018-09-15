@@ -1,6 +1,6 @@
 import json
 
-from tools.global_paths import FIELDS_DATA_FILE
+from src.tools.global_paths import FIELDS_DATA_FILE
 from collections import OrderedDict
 
 

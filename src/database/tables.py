@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, Boolean
-from database.base import Base
+from src.database.base import Base
 
 
 class FieldTypeTable(Base):
