@@ -6,10 +6,10 @@ from src.objects.fields import FieldType, Field
 from src.objects.creatures import CreatureGroup, CreatureType, SpawnedCreature
 from src.objects.containers import ContainerType, Container
 from src.objects.items import BoundedItem, Item
-from src.tools.global_paths import CREATURES_DATA_FILE, ITEMS_DATA_FILE
-from src.tools.global_paths import CONTAINERS_TYPES_DATA_FILE, FIELD_CONTAINERS_DATA_FILE,\
+from src.tools.globals.global_paths import CREATURES_DATA_FILE, ITEMS_DATA_FILE
+from src.tools.globals.global_paths import CONTAINERS_TYPES_DATA_FILE, FIELD_CONTAINERS_DATA_FILE,\
     CREATURES_CONTAINERS_DATA_FILE, STATIC_CONTAINERS_DATA_FILE
-from src.tools.global_paths import FIELDS_DATA_FILE, FIELDS_TYPE_DATA_FILE
+from src.tools.globals.global_paths import FIELDS_DATA_FILE, FIELDS_TYPE_DATA_FILE
 
 obj_file_dict = {
     FIELDS_TYPE_DATA_FILE: OrderedDict(FieldType=FieldType),

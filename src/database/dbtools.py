@@ -4,15 +4,7 @@ import importlib
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from src.database.base import Base
-
-
-class Singleton(type):
-    _instances = {}
-
-    def __call__(cls, *args, **kwargs):
-        if cls not in cls._instances:
-            cls._instances[cls] = super(Singleton, cls).__call__(*args, **kwargs)
-        return cls._instances[cls]
+from src.tools.globals.singleton import Singleton
 
 
 class DbTool(metaclass=Singleton):
@@ -56,3 +48,7 @@ class DbTool(metaclass=Singleton):
     def finish(self):
         self.session.commit()
         self.session.close()
+
+    @property
+    def get_player(self):
+        return self.get_one_row(('src.objects.creatures', 'SpawnedCreature', 'id_spawned_creature'), 0)

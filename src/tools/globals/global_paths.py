@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 
 
-MAIN_DIR = str(Path(__file__).parent.parent.parent)
+MAIN_DIR = str(Path(__file__).parent.parent.parent.parent)
 SRC_DIR = os.path.join(MAIN_DIR, "src/")
 RESOURCES_DIR = os.path.join(SRC_DIR, "resources/")
 
