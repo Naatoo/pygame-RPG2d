@@ -36,3 +36,7 @@ class BoundedItem(BoundedItemTable):
     @property
     def weight(self):
         return self.get_this_item().weight
+
+    @property
+    def item(self):
+        return self.get_this_item()

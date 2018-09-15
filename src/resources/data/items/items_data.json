@@ -4,52 +4,56 @@
       "id_item": 1,
       "name": "Apple",
       "weight": 3,
-      "value": 5
+      "value": 5,
+      "image": "src/resources/image/items/apple.png"
     },
     {
       "id_item": 2,
-      "name": "Potato",
+      "name": "Banana",
       "weight": 2,
-      "value": 3
+      "value": 3,
+      "image": "src/resources/image/items/banana.png"
     },
     {
       "id_item": 3,
-      "name": "Watermelon",
+      "name": "Pizza",
       "weight": 8,
-      "value": 12
+      "value": 12,
+      "image": "src/resources/image/items/pizza.png"
     },
     {
       "id_item": 4,
-      "name": "Onion",
+      "name": "Pear",
       "weight": 2,
-      "value": 5
+      "value": 5,
+      "image": "src/resources/image/items/pear.png"
     }
   ],
   "BoundedItem": [
     {
       "item_id": 1,
       "quantity": 2,
-      "container_id": 0
+      "container_slot_id": 1
     },
     {
       "item_id": 2,
       "quantity": 13,
-      "container_id": 0
+      "container_slot_id": 2
     },
     {
       "item_id": 4,
       "quantity": 23,
-      "container_id": 0
+      "container_slot_id": 3
     },
     {
       "item_id": 3,
       "quantity": 1,
-      "container_id": 0
+      "container_slot_id": 6
     },
     {
       "item_id": 2,
       "quantity": 5,
-      "container_id": 0
+      "container_slot_id": 12
     }
   ]
 }

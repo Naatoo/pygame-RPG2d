@@ -3,6 +3,7 @@ import importlib
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
+from sqlalchemy.orm.exc import NoResultFound
 from src.database.base import Base
 from src.tools.globals.singleton import Singleton
 
@@ -30,7 +31,10 @@ class DbTool(metaclass=Singleton):
     def get_one_row(self, data: tuple, second_to_eq):
         module, table_name, col = data
         table = getattr(importlib.import_module(module), table_name)
-        return self.session.query(table).filter(getattr(table, col) == second_to_eq).one()
+        try:
+            return self.session.query(table).filter(getattr(table, col) == second_to_eq).one()
+        except NoResultFound:
+            pass
 
     def get_one_column(self, column_name):
         return self.session.query(column_name)

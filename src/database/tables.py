@@ -70,6 +70,15 @@ class ContainerTable(Base):
     y = Column(Integer, ForeignKey("Field.y"))
 
 
+class ContainerSlotTable(Base):
+    __tablename__ = 'ContainerSlot'
+
+    id_container_slot = Column(Integer, primary_key=True)
+    pixels_x = Column(Integer, nullable=False)
+    pixels_y = Column(Integer, nullable=False)
+    container_id = Column(Integer, ForeignKey('Container.id_container'), nullable=False)
+
+
 class ItemTypeTable(Base):
     __tablename__ = 'ItemType'
 
@@ -86,13 +95,14 @@ class ItemTable(Base):
     name = Column(String)
     weight = Column(Integer)
     value = Column(Integer)
+    image = Column(String)
     item_type_id = Column(String(3), ForeignKey("ItemType.id_item_type"))
 
 
 class BoundedItemTable(Base):
-    __tablename__ = 'BoundedItems'
+    __tablename__ = 'BoundedItem'
 
     id_bounded_item = Column(Integer, primary_key=True)
     quantity = Column(Integer)
     item_id = Column(Integer, ForeignKey("Item.id_item"))
-    container_id = Column(Integer, ForeignKey("Container.id_container"))
+    container_slot_id = Column(Integer, ForeignKey("ContainerSlot.id_container_slot"))

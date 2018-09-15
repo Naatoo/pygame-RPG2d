@@ -1,5 +1,5 @@
 from src.database.dbtools import DbTool
-from src.database.tables import ContainerTypeTable, ContainerTable
+from src.database.tables import ContainerTypeTable, ContainerTable, ContainerSlotTable
 from src.objects.items import Item
 
 
@@ -46,3 +46,14 @@ class Container(ContainerTable):
     def type(self):
         return DbTool().get_one_row(('src.objects.containers', 'ContainerType', 'id_container_type'),
                                     self.container_type_id)
+
+
+class ContainerSlot(ContainerSlotTable):
+
+    def __repr__(self):
+        fmt = 'Container(id_slot={}, item={}, container_id={})'
+        return fmt.format(self.id_container_slot, self.item.name, self.container_id)
+
+    @property
+    def item(self):
+        return DbTool().get_one_row(('src.objects.items', 'BoundedItem', 'container_slot_id'), self.id_container_slot)
