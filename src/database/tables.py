@@ -50,33 +50,13 @@ class SpawnedCreatureTable(Base):
     spawned_creature_type_id = Column(Integer, ForeignKey('CreatureType.id_creature_type'))
 
 
-class ContainerTypeTable(Base):
-    __tablename__ = 'ContainerType'
-
-    id_container_type = Column(Integer, primary_key=True)
-    name = Column(String, nullable=False)
-    capacity = Column(Integer, nullable=False)
-
-
-class ContainerTable(Base):
-    __tablename__ = 'Container'
-
-    id_container = Column(Integer, primary_key=True)
-    custom_name = Column(String, nullable=True)
-    capacity = Column(Integer, nullable=True)
-    container_type_id = Column(Integer, ForeignKey('ContainerType.id_container_type'), nullable=False)
-    container_creature_id = Column(Integer, ForeignKey('SpawnedCreature.id_spawned_creature'), nullable=True)
-    x = Column(Integer, ForeignKey("Field.x"))
-    y = Column(Integer, ForeignKey("Field.y"))
-
-
 class ContainerSlotTable(Base):
     __tablename__ = 'ContainerSlot'
 
     id_container_slot = Column(Integer, primary_key=True)
     pixels_x = Column(Integer, nullable=False)
     pixels_y = Column(Integer, nullable=False)
-    container_id = Column(Integer, ForeignKey('Container.id_container'), nullable=False)
+    container_id = Column(Integer, ForeignKey('BoundedItem.id_bounded_item'), nullable=False)
 
 
 class ItemTypeTable(Base):
@@ -85,6 +65,7 @@ class ItemTypeTable(Base):
     id_item_type = Column(String(3), primary_key=True)
     name = Column(String, nullable=False)
     consumable = Column(Boolean, nullable=False)
+    container = Column(Boolean, nullable=False)
     special_effect = Column(String(3), nullable=True)
 
 
@@ -96,6 +77,7 @@ class ItemTable(Base):
     weight = Column(Integer)
     value = Column(Integer)
     image = Column(String)
+    slots = Column(Integer, nullable=True)
     item_type_id = Column(String(3), ForeignKey("ItemType.id_item_type"))
 
 
@@ -103,6 +85,9 @@ class BoundedItemTable(Base):
     __tablename__ = 'BoundedItem'
 
     id_bounded_item = Column(Integer, primary_key=True)
-    quantity = Column(Integer)
     item_id = Column(Integer, ForeignKey("Item.id_item"))
-    container_slot_id = Column(Integer, ForeignKey("ContainerSlot.id_container_slot"))
+    quantity = Column(Integer)
+    field_id = Column(Integer, ForeignKey("Field.id_field"), nullable=True)
+    creature_id = Column(Integer, ForeignKey("SpawnedCreature.id_spawned_creature"), nullable=True)
+    container_id = Column(Integer, ForeignKey("BoundedItem.id_bounded_item"), nullable=True)
+    container_slot_id = Column(Integer, ForeignKey("ContainerSlot.id_container_slot"), nullable=True)

@@ -9,10 +9,6 @@ RESOURCES_DIR = os.path.join(SRC_DIR, "resources/")
 DATA_DIR = os.path.join(RESOURCES_DIR, "data/")
 
 CONTAINERS_DATA_DIR = os.path.join(DATA_DIR, "containers/")
-CONTAINERS_TYPES_DATA_FILE = os.path.join(CONTAINERS_DATA_DIR, "containers_types_data.json")
-CREATURES_CONTAINERS_DATA_FILE = os.path.join(CONTAINERS_DATA_DIR, "creatures_containers_data.json")
-FIELD_CONTAINERS_DATA_FILE = os.path.join(CONTAINERS_DATA_DIR, "field_containers_data.json")
-STATIC_CONTAINERS_DATA_FILE = os.path.join(CONTAINERS_DATA_DIR, "static_containers_data.json")
 CONTAINERS_SLOTS_DATA_FILE = os.path.join(CONTAINERS_DATA_DIR, "containers_slots_data.json")
 
 CREATURES_DATA_DIR = os.path.join(DATA_DIR, "creatures/")

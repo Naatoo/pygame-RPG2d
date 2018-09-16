@@ -23,10 +23,13 @@ class DbTool(metaclass=Singleton):
         table = getattr(importlib.import_module(module), table_name)
         return self.session.query(table)
 
-    def get_all_rows(self, data: tuple, second_to_eq=None):
+    def get_all_rows(self, data: tuple, second_to_eq=None, sign="=="):
         module, table_name, col = data
         table = getattr(importlib.import_module(module), table_name)
-        return self.session.query(table).filter(getattr(table, col) == second_to_eq).all()
+        if sign == "==":
+            return self.session.query(table).filter(getattr(table, col) == second_to_eq).all()
+        elif sign == "!=":
+            return self.session.query(table).filter(getattr(table, col) != second_to_eq).all()
 
     def get_one_row(self, data: tuple, second_to_eq):
         module, table_name, col = data

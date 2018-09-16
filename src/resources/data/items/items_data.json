@@ -27,33 +27,57 @@
       "weight": 2,
       "value": 5,
       "image": "src/resources/image/items/pear.png"
+    },
+    {
+      "id_item": 5,
+      "name": "backpack",
+      "weight": 2,
+      "value": 5,
+      "image": "src/resources/image/items/backpack.png",
+      "slots": 32
+    },
+    {
+      "id_item": 6,
+      "name": "chest",
+      "weight": 2,
+      "value": 5,
+      "image": "src/resources/image/items/chest.png",
+      "slots": 16
     }
   ],
   "BoundedItem": [
     {
-      "item_id": 1,
-      "quantity": 2,
-      "container_slot_id": 1
+      "id_bounded_item": 1,
+      "item_id": 5,
+      "quantity": 1,
+      "creature_id": 0
     },
     {
       "item_id": 2,
       "quantity": 13,
-      "container_slot_id": 2
+      "field_id": 2
     },
     {
       "item_id": 4,
       "quantity": 23,
-      "container_slot_id": 3
+      "creature_id": 0
     },
     {
       "item_id": 3,
       "quantity": 1,
-      "container_slot_id": 6
+      "field_id": 56
     },
     {
       "item_id": 2,
       "quantity": 5,
-      "container_slot_id": 12
+      "container_id": 1,
+      "container_slot_id": 2
+    },
+    {
+      "item_id": 6,
+      "quantity": 1,
+      "container_id": 1,
+      "container_slot_id": 5
     }
   ]
 }

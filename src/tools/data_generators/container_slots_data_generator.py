@@ -10,6 +10,9 @@ with open(CONTAINERS_SLOTS_DATA_FILE, "a") as data:
     row_data = []
     for x in range(8):
         for y in range(4):
-            row_data.append(OrderedDict(pixels_x=x * 32 + x_offset, pixels_y=y * 31 + y_offset, container_id=0))
+            row_data.append(OrderedDict(pixels_x=x * 32 + x_offset, pixels_y=y * 31 + y_offset, container_id=1))
+    for x in range(8):
+        for y in range(2):
+            row_data.append(OrderedDict(pixels_x=x * 32 + x_offset, pixels_y=y * 31 + y_offset, container_id=6))
     table = {"ContainerSlot": row_data}
     data.write(json.dumps(table))

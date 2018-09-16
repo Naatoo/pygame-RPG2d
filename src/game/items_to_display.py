@@ -17,6 +17,12 @@ def display_creatures():
         blit(pygame.image.load(creature.type.image), (creature.x * 32, creature.y * 32))
 
 
+def display_tiles_items():
+    for element in DbTool().get_all_rows(("src.objects.items", "BoundedItem", "field_id"), None, sign="!="):
+        field = DbTool().get_one_row(("src.objects.fields", "Field", "id_field"), element.field_id)
+        blit(pygame.image.load(element.item.image), (field.x * 32, field.y * 32))
+
+
 def display_player_eq_tile():
     Display().get_display_window().blit(pygame.image.load('src/resources/image/ui/eq.png'), (640, 120))
 
@@ -24,9 +30,10 @@ def display_player_eq_tile():
 def display_eq_items():
     eq_x_offset = 640
     eq_y_offset = 120
-    for container_slot in DbTool().get_all_rows(('src.objects.containers', 'ContainerSlot', 'container_id'), 0):
-        element = DbTool().get_one_row(('src.objects.items', 'BoundedItem', 'container_slot_id'),
-                                       container_slot.id_container_slot)
+    for container_slot in DbTool().get_all_rows(('src.objects.containers', 'ContainerSlot', 'container_id'), 1):
+        print(container_slot)
+        element = container_slot.item
+        print(element)
         if element is not None:
             blit(pygame.image.load(element.item.image),
                  (container_slot.pixels_x + eq_x_offset, container_slot.pixels_y + eq_y_offset))

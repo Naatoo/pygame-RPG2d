@@ -4,11 +4,10 @@ from collections import OrderedDict
 from src.database.dbtools import DbTool
 from src.objects.fields import FieldType, Field
 from src.objects.creatures import CreatureGroup, CreatureType, SpawnedCreature
-from src.objects.containers import ContainerType, Container, ContainerSlot
+from src.objects.containers import ContainerSlot
 from src.objects.items import BoundedItem, Item
 from src.tools.globals.global_paths import CREATURES_DATA_FILE, ITEMS_DATA_FILE
-from src.tools.globals.global_paths import CONTAINERS_TYPES_DATA_FILE, FIELD_CONTAINERS_DATA_FILE,\
-    CREATURES_CONTAINERS_DATA_FILE, STATIC_CONTAINERS_DATA_FILE
+
 from src.tools.globals.global_paths import FIELDS_DATA_FILE, FIELDS_TYPE_DATA_FILE, CONTAINERS_SLOTS_DATA_FILE
 
 obj_file_dict = {
@@ -16,10 +15,6 @@ obj_file_dict = {
     FIELDS_DATA_FILE: OrderedDict(Field=Field),
     CREATURES_DATA_FILE:
         OrderedDict(CreatureGroup=CreatureGroup, CreatureType=CreatureType, SpawnedCreature=SpawnedCreature),
-    CONTAINERS_TYPES_DATA_FILE: OrderedDict(ContainerType=ContainerType),
-    FIELD_CONTAINERS_DATA_FILE: OrderedDict(Container=Container),
-    CREATURES_CONTAINERS_DATA_FILE: OrderedDict(Container=Container),
-    STATIC_CONTAINERS_DATA_FILE: OrderedDict(Container=Container),
     CONTAINERS_SLOTS_DATA_FILE: OrderedDict(ContainerSlot=ContainerSlot),
     ITEMS_DATA_FILE: OrderedDict(Item=Item, BoundedItem=BoundedItem)
 }
