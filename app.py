@@ -1,4 +1,4 @@
-from src.database.dbtools import DbTool
+from src.database.db_tool import DbTool
 from src.database.initial_data_insertion import load_initial_data
 from src.objects.world_map import WorldMap
 from src.operations.input_checker import ActionChecker

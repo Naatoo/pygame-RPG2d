@@ -1,6 +1,6 @@
 import pygame
 
-from src.database.dbtools import DbTool
+from src.database.db_tool import DbTool
 
 
 def player_move(event):
