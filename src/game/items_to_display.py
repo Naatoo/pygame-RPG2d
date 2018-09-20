@@ -31,9 +31,7 @@ def display_eq_items():
     eq_x_offset = 640
     eq_y_offset = 120
     for container_slot in DbTool().get_rows_where(('src.objects.containers', 'ContainerSlot', 'container_id'), 1):
-        print(container_slot)
         element = container_slot.item
-        print(element)
         if element is not None:
             blit(pygame.image.load(element.item.image),
                  (container_slot.pixels_x + eq_x_offset, container_slot.pixels_y + eq_y_offset))

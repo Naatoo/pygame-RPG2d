@@ -7,6 +7,7 @@ from sqlalchemy.orm import Session
 from src.database.base import Base
 from src.tools.globals.singleton import Singleton
 from sqlalchemy.orm.exc import NoResultFound
+from sqlalchemy import and_
 
 
 class DbTool(metaclass=Singleton):
@@ -39,6 +40,14 @@ class DbTool(metaclass=Singleton):
             return result.one()
         except NoResultFound:
             return None
+
+    def get_one_row_where_two_conditions(self, data: tuple, second_column: tuple):
+        module, table_name, (col_x, col_y) = data
+        table = getattr(importlib.import_module(module), table_name)
+        first_col_x = getattr(table, col_x)
+        first_col_y = getattr(table, col_y)
+        return self.session.query(table).filter(and_(first_col_x == second_column[0],
+                                                     first_col_y == second_column[1])).one()
 
     def insert_row(self, row):
         self.session.add(row)

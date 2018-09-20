@@ -21,5 +21,3 @@ def player_move(event):
             player.x += x_change
             player.y += y_change
         return True
-
-    print(event)

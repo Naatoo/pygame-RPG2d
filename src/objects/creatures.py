@@ -1,3 +1,5 @@
+import itertools
+
 from src.database.db_tool import DbTool
 from src.database.tables import CreatureGroupTable, CreatureTypeTable, SpawnedCreatureTable
 
@@ -35,3 +37,8 @@ class SpawnedCreature(SpawnedCreatureTable):
     def type(self):
         return DbTool().get_one_row_where(('src.objects.creatures', 'CreatureType', 'id_creature_type'),
                                     self.spawned_creature_type_id)
+
+    def get_fields_around(self):
+        rows = range(self.x - 1, self.x + 2)
+        columns = range(self.y - 1, self.y + 2)
+        return (coords for coords in itertools.product(rows, columns) if coords != (self.x, self.y))

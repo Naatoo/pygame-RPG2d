@@ -4,7 +4,8 @@ from src.game.items_to_display import display_tiles, display_creatures, display_
     display_tiles_items
 from src.game.display import Display
 from src.game.move_actions import player_move
-
+from src.game.possibilities import items_in_player_range
+from src.database.db_tool import DbTool
 
 def game_loop():
     pygame.init()
@@ -16,12 +17,15 @@ def game_loop():
 
     crashed = False
     refresh = True
+    fields_around = [coords for coords in DbTool().get_player.get_fields_around()]
 
     display_player_eq_tile()
     display_eq_items()
 
     while not crashed:
+        items_in_player_range(fields_around)
         if refresh:
+            fields_around = [coords for coords in DbTool().get_player.get_fields_around()]
             display_tiles()
             display_creatures()
             display_tiles_items()
