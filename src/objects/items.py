@@ -27,7 +27,7 @@ class BoundedItem(BoundedItemTable):
         return fmt.format(self.name, self.quantity)
 
     def get_this_item(self):
-        return DbTool().get_one_row(('src.objects.items', 'Item', 'id_item'), self.item_id)
+        return DbTool().get_one_row_where(('src.objects.items', 'Item', 'id_item'), self.item_id)
 
     @property
     def name(self):

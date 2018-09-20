@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 
 from src.database.base import Base
 from src.tools.globals.singleton import Singleton
+from sqlalchemy.orm.exc import NoResultFound
 
 
 class DbTool(metaclass=Singleton):
@@ -34,7 +35,10 @@ class DbTool(metaclass=Singleton):
         module, table_name, col = data
         table = getattr(importlib.import_module(module), table_name)
         result = self.session.query(table).filter(getattr(table, col) == second_to_eq)
-        return result.one() if result else result
+        try:
+            return result.one()
+        except NoResultFound:
+            return None
 
     def insert_row(self, row):
         self.session.add(row)

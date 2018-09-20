@@ -16,4 +16,4 @@ class Field(FieldTable):
 
     @property
     def type(self):
-        return DbTool().get_one_row(('src.objects.fields', 'FieldType', 'id_field_type'), self.field_type_id)
+        return DbTool().get_one_row_where(('src.objects.fields', 'FieldType', 'id_field_type'), self.field_type_id)

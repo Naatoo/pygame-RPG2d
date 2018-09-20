@@ -14,4 +14,5 @@ class ContainerSlot(ContainerSlotTable):
 
     @property
     def item(self):
-        return DbTool().get_one_row(('src.objects.items', 'BoundedItem', 'container_slot_id'), self.id_container_slot)
+        return DbTool().get_one_row_where(('src.objects.items', 'BoundedItem', 'container_slot_id'),
+                                          self.id_container_slot)
