@@ -1,7 +1,7 @@
 import pygame
 
 from src.database.db_tool import DbTool
-from src.game.display import Display
+from src.display import Display
 
 
 def display_tiles():

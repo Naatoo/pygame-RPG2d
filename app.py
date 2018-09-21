@@ -1,11 +1,11 @@
 from src.database.db_tool import DbTool
 from src.database.initial_data_insertion import load_initial_data
-from src.game.main import game_loop
+from src.main import Game
 
 try:
     dbtool = DbTool()
     load_initial_data()
-    game_loop()
+    game = Game()
 
 finally:
     DbTool().finish()
