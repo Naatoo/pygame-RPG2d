@@ -1,9 +1,6 @@
 import pygame
 
-from src.events.items_to_display import display_tiles, display_creatures, display_eq_items, display_player_eq_tile,\
-    display_tiles_items
-from src.display import Display
-from src.events.move_actions import move_by_keys
+from src.events.display_tool import DisplayTool
 from src.database.db_tool import DbTool
 from src.events.mouse_events import check_mouse_button
 from src.events.keys_events import check_key
@@ -13,7 +10,7 @@ class Game:
 
     def __init__(self):
         pygame.init()
-        self.game_display = Display()
+        self.display_tool = DisplayTool()
         self.clock = pygame.time.Clock()
         self.crashed = False
         self.update = True
@@ -27,7 +24,7 @@ class Game:
         pygame.display.set_caption('RPG')
 
     def display_on_startup(self):
-        self.display()
+        self.display_tool.startup_display()
 
     def event_checker(self):
         while not self.crashed:
@@ -46,15 +43,3 @@ class Game:
                 pygame.display.update()
                 self.update = False
             self.clock.tick(60)
-
-    def check_after_move(self):
-        self.fields_around = [coords for coords in DbTool().get_player.get_fields_around()]
-        self.display()
-
-    @staticmethod
-    def display():
-        display_tiles()
-        display_creatures()
-        display_tiles_items()
-        display_player_eq_tile()
-        display_eq_items()

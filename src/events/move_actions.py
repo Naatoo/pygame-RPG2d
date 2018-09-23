@@ -1,8 +1,7 @@
 import pygame
 
 from src.database.db_tool import DbTool
-from src.events.items_to_display import display_creatures
-from src.events.items_to_display import update_tile
+from src.events.display_tool import DisplayTool
 
 
 move_choices = {
@@ -34,8 +33,8 @@ def move_by_mouse(x: int, y: int):
 
 def update_display(coordinates_initial: tuple, coordinates_change: tuple):
     change_player_coordinates(coordinates_change)
-    update_tile(coordinates_initial)
-    display_creatures()
+    DisplayTool().update_one_tile(coordinates_initial)
+    DisplayTool().display_creatures()
 
 
 def change_player_coordinates(coordinates_change: tuple):
