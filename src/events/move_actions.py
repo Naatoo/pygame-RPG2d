@@ -35,6 +35,7 @@ def update_display(coordinates_initial: tuple, coordinates_change: tuple):
     change_player_coordinates(coordinates_change)
     DisplayTool().update_one_tile(coordinates_initial)
     DisplayTool().display_creatures()
+    DisplayTool().display_tiles_items()
 
 
 def change_player_coordinates(coordinates_change: tuple):

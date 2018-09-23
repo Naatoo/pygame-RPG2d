@@ -1,0 +1,39 @@
+import pygame
+
+from src.database.db_tool import DbTool
+from src.events.display_tool import DisplayTool
+
+
+def items_in_player_range(fields_around):
+    items = [DbTool().get_one_row_where_two_conditions(('src.objects.fields', 'Field', ('x', 'y')), fields).items
+             for fields in fields_around]
+    return items
+
+
+def check_if_coordinates_in_range(event: pygame.event):
+    clicked_coordinates = tuple(coordinate // 32 for coordinate in event.dict['pos'])
+    if clicked_coordinates in (coordinates for coordinates in DbTool().get_player.get_fields_around()):
+        field = DbTool().get_one_row_where_two_conditions(
+            ('src.objects.fields', 'Field', ('x', 'y')), clicked_coordinates)
+        item = DbTool().get_one_row_where(('src.objects.items', 'BoundedItem', 'field_id'), field.id_field)
+        check_if_item_in_coordinates(item)
+
+
+def check_if_item_in_coordinates(item):
+    if item is not None:
+        add_item_from_field_to_player_eq(item)
+
+
+def add_item_from_field_to_player_eq(item):
+    coordinates = item.x, item.y
+    player = DbTool().get_player
+    columns_to_update = {
+        'field_id': None,
+        'container_id': player.equipment.id_bounded_item,
+        'container_slot_id': player.free_eq_slots[0]
+    }
+    DbTool().update_row(('src.objects.items', 'BoundedItem', 'id_bounded_item'), item.id_bounded_item,
+                        columns_to_update)
+    DisplayTool().display_tiles_items(refresh=True)
+    DisplayTool().display_eq_items(refresh=True)
+    DisplayTool().update_one_tile(coordinates)

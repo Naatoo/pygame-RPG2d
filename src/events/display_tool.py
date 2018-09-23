@@ -43,14 +43,19 @@ class DisplayTool(metaclass=Singleton):
 
     def display_tiles_items(self, refresh=False):
         if refresh:
-            for element in self.tiles_items:
-                field = DbTool().get_one_row_where(("src.objects.fields", "Field", "id_field"), element.field_id)
-                self.blit_image(self.items_images[element.item.name], (field.x * 32, field.y * 32))
+            self.tiles_items = DbTool().get_rows_where(
+                ("src.objects.items", "BoundedItem", "field_id"), None, equal=False)
+        for element in self.tiles_items:
+            field = DbTool().get_one_row_where(("src.objects.fields", "Field", "id_field"), element.field_id)
+            self.blit_image(self.items_images[element.item.name], (field.x * 32, field.y * 32))
 
     def display_player_eq_tile(self):
         self.display_window.blit(pygame.image.load('src/resources/image/ui/eq.png'), (640, 120))
 
-    def display_eq_items(self):
+    def display_eq_items(self, refresh=False):
+        if refresh:
+            self.player_eq_items = DbTool().get_rows_where(
+                ('src.objects.containers', 'ContainerSlot', 'container_id'), 1)
         eq_x_offset = 640
         eq_y_offset = 120
         for container_slot in self.player_eq_items:

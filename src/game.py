@@ -1,9 +1,9 @@
 import pygame
 
 from src.events.display_tool import DisplayTool
-from src.database.db_tool import DbTool
 from src.events.mouse_events import check_mouse_button
 from src.events.keys_events import check_key
+from src.events.items_actions import check_if_coordinates_in_range
 
 
 class Game:
@@ -14,7 +14,6 @@ class Game:
         self.clock = pygame.time.Clock()
         self.crashed = False
         self.update = True
-        self.fields_around = [coords for coords in DbTool().get_player.get_fields_around()]
         self.set_startup_config()
         self.display_on_startup()
         self.event_checker()
@@ -34,6 +33,10 @@ class Game:
                 elif event.type == pygame.KEYDOWN:
                     check_key(event)
                     self.update = True
+                elif any(pygame.key.get_pressed()) and event.type == pygame.MOUSEBUTTONDOWN:
+                    if pygame.key.get_pressed()[pygame.K_LCTRL] and event.button == 3:
+                        check_if_coordinates_in_range(event)
+                        self.update = True
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     check_mouse_button(event)
                     self.update = True

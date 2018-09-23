@@ -40,3 +40,11 @@ class BoundedItem(BoundedItemTable):
     @property
     def item(self):
         return self.get_this_item()
+
+    @property
+    def x(self):
+        return DbTool().get_one_row_where(('src.objects.fields', 'Field', 'id_field'), self.field_id).x
+
+    @property
+    def y(self):
+        return DbTool().get_one_row_where(('src.objects.fields', 'Field', 'id_field'), self.field_id).y

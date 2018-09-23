@@ -49,6 +49,11 @@ class DbTool(metaclass=Singleton):
         return self.session.query(table).filter(and_(first_col_x == second_column[0],
                                                      first_col_y == second_column[1])).one()
 
+    def update_row(self, data: tuple, second_to_eq, columns_to_update: dict):
+        module, table_name, col = data
+        table = getattr(importlib.import_module(module), table_name)
+        return self.session.query(table).filter(getattr(table, col) == second_to_eq).update(columns_to_update)
+
     def insert_row(self, row):
         self.session.add(row)
 

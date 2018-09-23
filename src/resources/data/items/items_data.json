@@ -60,7 +60,7 @@
     {
       "item_id": 4,
       "quantity": 23,
-      "creature_id": 0
+      "field_id": 38
     },
     {
       "item_id": 3,
@@ -78,6 +78,16 @@
       "quantity": 1,
       "container_id": 1,
       "container_slot_id": 5
+    },
+    {
+      "item_id": 5,
+      "quantity": 1,
+      "creature_id": 1
+    },
+    {
+      "item_id": 5,
+      "quantity": 1,
+      "creature_id": 2
     }
   ]
 }

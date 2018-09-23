@@ -36,7 +36,17 @@ class SpawnedCreature(SpawnedCreatureTable):
     @property
     def type(self):
         return DbTool().get_one_row_where(('src.objects.creatures', 'CreatureType', 'id_creature_type'),
-                                    self.spawned_creature_type_id)
+                                          self.spawned_creature_type_id)
+
+    @property
+    def equipment(self):
+        return DbTool().get_one_row_where(('src.objects.items', 'BoundedItem', 'creature_id'), self.id_spawned_creature)
+
+    @property
+    def free_eq_slots(self):
+        used_ids = [item.container_slot_id for item in DbTool().get_rows_where(
+            ('src.objects.items', 'BoundedItem', 'container_id'), self.equipment.id_bounded_item)]
+        return [index for index in range(1, 33) if index not in used_ids]
 
     def get_fields_around(self):
         rows = range(self.x - 1, self.x + 2)
