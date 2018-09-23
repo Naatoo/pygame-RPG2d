@@ -41,3 +41,10 @@ def display_eq_items():
 
 def blit(image: str, coordinates: tuple):
     Display().get_display_window().blit(image, coordinates)
+
+
+def update_tile(coordinates):
+    field = DbTool().get_one_row_where_two_conditions(('src.objects.fields', 'Field', ('x', 'y')), coordinates)
+    image = DbTool().get_one_row_where(
+        ('src.objects.fields', 'FieldType', 'id_field_type'), field.field_type_id).image
+    blit(pygame.image.load(image), (field.x * 32, field.y * 32))

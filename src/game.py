@@ -1,12 +1,12 @@
 import pygame
 
-from src.items_to_display import display_tiles, display_creatures, display_eq_items, display_player_eq_tile,\
+from src.events.items_to_display import display_tiles, display_creatures, display_eq_items, display_player_eq_tile,\
     display_tiles_items
 from src.display import Display
-from src.move_actions import player_move
-from src.possibilities import items_in_player_range
+from src.events.move_actions import move_by_keys
 from src.database.db_tool import DbTool
-from src.keys import key_choices
+from src.events.mouse_events import check_mouse_button
+from src.events.keys_events import check_key
 
 
 class Game:
@@ -16,8 +16,8 @@ class Game:
         self.game_display = Display()
         self.clock = pygame.time.Clock()
         self.crashed = False
+        self.update = True
         self.fields_around = [coords for coords in DbTool().get_player.get_fields_around()]
-
         self.set_startup_config()
         self.display_on_startup()
         self.event_checker()
@@ -25,7 +25,6 @@ class Game:
     @staticmethod
     def set_startup_config():
         pygame.display.set_caption('RPG')
-        pygame.event.set_blocked(pygame.MOUSEMOTION)
 
     def display_on_startup(self):
         self.display()
@@ -35,17 +34,18 @@ class Game:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.crashed = True
-                elif event.type == pygame.KEYDOWN and event.key in key_choices['move']:
-                    self.move_player(event)
-                    self.check_after_move()
+                elif event.type == pygame.KEYDOWN:
+                    check_key(event)
+                    self.update = True
+                elif event.type == pygame.MOUSEBUTTONDOWN:
+                    check_mouse_button(event)
+                    self.update = True
                 else:
                     pass
-            pygame.display.update()
+            if self.update:
+                pygame.display.update()
+                self.update = False
             self.clock.tick(60)
-
-    @staticmethod
-    def move_player(event):
-        player_move(event)
 
     def check_after_move(self):
         self.fields_around = [coords for coords in DbTool().get_player.get_fields_around()]
