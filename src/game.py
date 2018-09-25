@@ -23,7 +23,4 @@ class Game:
             events = pygame.event.get()
             for event in events:
                 self.event_checker.handle_event(event)
-            # if self.event_checker.update:
-            pygame.display.update()
-            #     self.event_checker.update = False
             clock.tick(60)

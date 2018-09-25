@@ -1,3 +1,5 @@
+import pygame
+
 from src.database.db_tool import DbTool
 from src.events.display_tool import DisplayTool
 
@@ -35,6 +37,7 @@ def add_item_from_field_to_player_eq(item):
     DisplayTool().display_tiles_items(refresh=True)
     DisplayTool().display_eq_items(refresh=True)
     DisplayTool().update_one_tile(coordinates)
+    pygame.display.update()
 
 
 def move_item_on_the_ground(from_position: tuple, to_position: tuple):
@@ -52,5 +55,6 @@ def move_item_on_the_ground(from_position: tuple, to_position: tuple):
         DisplayTool().update_one_tile(from_coordinates)
     else:
         print("Item with coordinates: {} is out of player's range".format(from_coordinates))
+    pygame.display.update()
 
 # TODO out of screen handling
