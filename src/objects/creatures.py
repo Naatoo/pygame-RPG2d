@@ -48,7 +48,7 @@ class SpawnedCreature(SpawnedCreatureTable):
             ('src.objects.items', 'BoundedItem', 'container_id'), self.equipment.id_bounded_item)]
         return [index for index in range(1, 33) if index not in used_ids]
 
-    def get_fields_around(self):
+    def get_fields_around_and_self(self):
         rows = range(self.x - 1, self.x + 2)
         columns = range(self.y - 1, self.y + 2)
-        return (coords for coords in itertools.product(rows, columns) if coords != (self.x, self.y))
+        return (coords for coords in itertools.product(rows, columns))

@@ -10,9 +10,9 @@ def items_in_player_range(fields_around):
     return items
 
 
-def check_if_coordinates_in_range(event: pygame.event):
+def action_collect_item(event: pygame.event):
     clicked_coordinates = tuple(coordinate // 32 for coordinate in event.dict['pos'])
-    if clicked_coordinates in (coordinates for coordinates in DbTool().get_player.get_fields_around()):
+    if clicked_coordinates in (coordinates for coordinates in DbTool().get_player.get_fields_around_and_self()):
         field = DbTool().get_one_row_where_two_conditions(
             ('src.objects.fields', 'Field', ('x', 'y')), clicked_coordinates)
         item = DbTool().get_one_row_where(('src.objects.items', 'BoundedItem', 'field_id'), field.id_field)
@@ -37,3 +37,20 @@ def add_item_from_field_to_player_eq(item):
     DisplayTool().display_tiles_items(refresh=True)
     DisplayTool().display_eq_items(refresh=True)
     DisplayTool().update_one_tile(coordinates)
+
+
+def move_item_on_the_ground(from_coordinates: tuple, to_coordinates: tuple):
+    if from_coordinates in (coordinates for coordinates in DbTool().get_player.get_fields_around_and_self()):
+        initial_field = DbTool().get_one_row_where_two_conditions(
+            ('src.objects.fields', 'Field', ('x', 'y')), from_coordinates)
+        target_field = DbTool().get_one_row_where_two_conditions(
+            ('src.objects.fields', 'Field', ('x', 'y')), to_coordinates)
+        columns_to_update = {'field_id': target_field.id_field}
+        DbTool().update_row(('src.objects.items', 'BoundedItem', 'field_id'), initial_field.id_field,
+                            columns_to_update)
+        DisplayTool().display_tiles_items(refresh=True)
+        DisplayTool().update_one_tile(from_coordinates)
+    else:
+        print("Item with coordinates: {} is out of player's range".format(from_coordinates))
+
+# TODO out of screen handling
