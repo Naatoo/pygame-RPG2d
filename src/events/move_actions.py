@@ -12,17 +12,18 @@ move_choices = {
 }
 
 
-def move_by_keys(event: pygame.event):
+def move_by_keys(pressed_key: pygame.key):
     player = DbTool().get_player
     coordinates_initial = player.x, player.y,
     coordinates_change = 0, 0,
-    for co, event_type in move_choices.items():
-        if event_type == event.key:
+    for co, key in move_choices.items():
+        if key == pressed_key:
             coordinates_change = co
     update_display(coordinates_initial, coordinates_change)
 
 
-def move_by_mouse(x: int, y: int):
+def move_by_mouse(position):
+    x, y = (coordinate // 32 for coordinate in position)
     player = DbTool().get_player
     x_to_change = [(1, 0) if x - player.x > 0 else (-1, 0) for _ in range(abs(x - player.x))]
     y_to_change = [(0, 1) if y - player.y > 0 else (0, -1) for _ in range(abs(y - player.y))]

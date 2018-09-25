@@ -22,8 +22,8 @@ class Game:
         while not self.event_checker.crashed:
             events = pygame.event.get()
             for event in events:
-                self.event_checker.check_event(event)
-            if self.event_checker.update:
-                pygame.display.update()
-                self.event_checker.update = False
+                self.event_checker.handle_event(event)
+            # if self.event_checker.update:
+            pygame.display.update()
+            #     self.event_checker.update = False
             clock.tick(60)

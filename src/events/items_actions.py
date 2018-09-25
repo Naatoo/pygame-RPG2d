@@ -1,5 +1,3 @@
-import pygame
-
 from src.database.db_tool import DbTool
 from src.events.display_tool import DisplayTool
 
@@ -10,8 +8,8 @@ def items_in_player_range(fields_around):
     return items
 
 
-def action_collect_item(event: pygame.event):
-    clicked_coordinates = tuple(coordinate // 32 for coordinate in event.dict['pos'])
+def action_collect_item(position: tuple):
+    clicked_coordinates = tuple(coordinate // 32 for coordinate in position)
     if clicked_coordinates in (coordinates for coordinates in DbTool().get_player.get_fields_around_and_self()):
         field = DbTool().get_one_row_where_two_conditions(
             ('src.objects.fields', 'Field', ('x', 'y')), clicked_coordinates)
@@ -39,7 +37,9 @@ def add_item_from_field_to_player_eq(item):
     DisplayTool().update_one_tile(coordinates)
 
 
-def move_item_on_the_ground(from_coordinates: tuple, to_coordinates: tuple):
+def move_item_on_the_ground(from_position: tuple, to_position: tuple):
+    from_coordinates = tuple(coordinate // 32 for coordinate in from_position)
+    to_coordinates = tuple(coordinate // 32 for coordinate in to_position)
     if from_coordinates in (coordinates for coordinates in DbTool().get_player.get_fields_around_and_self()):
         initial_field = DbTool().get_one_row_where_two_conditions(
             ('src.objects.fields', 'Field', ('x', 'y')), from_coordinates)
