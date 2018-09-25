@@ -7,15 +7,15 @@ from src.objects.creatures import CreatureGroup, CreatureType, SpawnedCreature
 from src.objects.containers import ContainerSlot
 from src.objects.items import BoundedItem, Item
 from src.tools.globals.global_paths import CREATURES_DATA_FILE, ITEMS_DATA_FILE
-
 from src.tools.globals.global_paths import FIELDS_DATA_FILE, FIELDS_TYPE_DATA_FILE, CONTAINERS_SLOTS_DATA_FILE
 
+
 obj_file_dict = {
-    FIELDS_TYPE_DATA_FILE: OrderedDict(FieldType=FieldType),
-    FIELDS_DATA_FILE: OrderedDict(Field=Field),
+    FIELDS_TYPE_DATA_FILE: dict(FieldType=FieldType),
+    FIELDS_DATA_FILE: dict(Field=Field),
     CREATURES_DATA_FILE:
         OrderedDict(CreatureGroup=CreatureGroup, CreatureType=CreatureType, SpawnedCreature=SpawnedCreature),
-    CONTAINERS_SLOTS_DATA_FILE: OrderedDict(ContainerSlot=ContainerSlot),
+    CONTAINERS_SLOTS_DATA_FILE: dict(ContainerSlot=ContainerSlot),
     ITEMS_DATA_FILE: OrderedDict(Item=Item, BoundedItem=BoundedItem)
 }
 
