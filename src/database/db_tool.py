@@ -7,7 +7,7 @@ from sqlalchemy.orm import Session
 from src.database.base import Base
 from src.tools.globals.singleton import Singleton
 from sqlalchemy.orm.exc import NoResultFound
-from sqlalchemy import and_
+from sqlalchemy import and_, tuple_
 
 
 class DbTool(metaclass=Singleton):
@@ -41,13 +41,28 @@ class DbTool(metaclass=Singleton):
         except NoResultFound:
             return None
 
-    def get_one_row_where_two_conditions(self, data: tuple, second_column: tuple):
-        module, table_name, (col_x, col_y) = data
+    def get_element_in_coordinates(self, data: tuple, x: int, y: int):
+        module, table_name = data
         table = getattr(importlib.import_module(module), table_name)
-        first_col_x = getattr(table, col_x)
-        first_col_y = getattr(table, col_y)
-        return self.session.query(table).filter(and_(first_col_x == second_column[0],
-                                                     first_col_y == second_column[1])).one()
+        first_col_x = getattr(table, 'x')
+        first_col_y = getattr(table, 'y')
+        try:
+            return self.session.query(table).filter(and_(first_col_x == x, first_col_y == y)).one()
+        except NoResultFound:
+            return None
+
+    def get_rows_where_coordinates_in(self, data: tuple, x_tuple: tuple, y_tuple: tuple):
+        module, table_name = data
+        table = getattr(importlib.import_module(module), table_name)
+        first_col_x = getattr(table, 'x')
+        first_col_y = getattr(table, 'y')
+        return self.session.query(table).filter(tuple_(first_col_x, first_col_y).in_([x_tuple, y_tuple])).all()
+
+    def get_rows_between(self, data: tuple, x_range: tuple, y_range: tuple):
+        module, table_name = data
+        table = getattr(importlib.import_module(module), table_name)
+        return self.session.query(table).filter(and_(getattr(table, "x").between(x_range[0], x_range[1]),
+                                                     getattr(table, "y").between(y_range[0], y_range[1]))).all()
 
     def update_row(self, data: tuple, second_to_eq, columns_to_update: dict):
         module, table_name, col = data

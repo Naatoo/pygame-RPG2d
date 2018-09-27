@@ -3,6 +3,7 @@ from src.database.base import Base
 
 
 class FieldTypeTable(Base):
+
     __tablename__ = 'FieldType'
 
     id_field_type = Column(Integer, primary_key=True)
@@ -12,15 +13,16 @@ class FieldTypeTable(Base):
 
 
 class FieldTable(Base):
+
     __tablename__ = 'Field'
 
-    id_field = Column(Integer, primary_key=True)
-    x = Column(Integer)
-    y = Column(Integer)
+    x = Column(Integer, primary_key=True)
+    y = Column(Integer, primary_key=True)
     field_type_id = Column(Integer, ForeignKey('FieldType.id_field_type'))
 
 
 class CreatureGroupTable(Base):
+
     __tablename__ = "CreatureGroup"
 
     id_creature_group = Column(Integer, primary_key=True)
@@ -30,6 +32,7 @@ class CreatureGroupTable(Base):
 
 
 class CreatureTypeTable(Base):
+
     __tablename__ = 'CreatureType'
 
     id_creature_type = Column(Integer, primary_key=True)
@@ -41,6 +44,7 @@ class CreatureTypeTable(Base):
 
 
 class SpawnedCreatureTable(Base):
+
     __tablename__ = 'SpawnedCreature'
 
     id_spawned_creature = Column(Integer, primary_key=True)
@@ -51,6 +55,7 @@ class SpawnedCreatureTable(Base):
 
 
 class ContainerSlotTable(Base):
+
     __tablename__ = 'ContainerSlot'
 
     id_container_slot = Column(Integer, primary_key=True)
@@ -60,6 +65,7 @@ class ContainerSlotTable(Base):
 
 
 class ItemTypeTable(Base):
+
     __tablename__ = 'ItemType'
 
     id_item_type = Column(String(3), primary_key=True)
@@ -70,6 +76,7 @@ class ItemTypeTable(Base):
 
 
 class ItemTable(Base):
+
     __tablename__ = 'Item'
 
     id_item = Column(Integer, primary_key=True)
@@ -82,12 +89,15 @@ class ItemTable(Base):
 
 
 class BoundedItemTable(Base):
+
     __tablename__ = 'BoundedItem'
 
     id_bounded_item = Column(Integer, primary_key=True)
-    item_id = Column(Integer, ForeignKey("Item.id_item"))
     quantity = Column(Integer)
-    field_id = Column(Integer, ForeignKey("Field.id_field"), nullable=True)
+    item_id = Column(Integer, ForeignKey("Item.id_item"))
+    x = Column(Integer, ForeignKey("Field.x"), nullable=True)
+    y = Column(Integer, ForeignKey("Field.y"), nullable=True)
     creature_id = Column(Integer, ForeignKey("SpawnedCreature.id_spawned_creature"), nullable=True)
     container_id = Column(Integer, ForeignKey("BoundedItem.id_bounded_item"), nullable=True)
     container_slot_id = Column(Integer, ForeignKey("ContainerSlot.id_container_slot"), nullable=True)
+
