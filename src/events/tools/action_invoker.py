@@ -1,7 +1,6 @@
 import pygame
 from src.database.db_tool import DbTool
-from src.events.tools.display import Display
-
+from src.tools.globals.constants import pixels_changer
 
 move_choices = {
     (0, -1): pygame.K_UP,
@@ -14,7 +13,6 @@ move_choices = {
 class ActionInvoker:
 
     def __init__(self):
-        self.pixel_changer = Display().pixels_changer
         self.player = DbTool().get_player
 
     @staticmethod
@@ -23,8 +21,6 @@ class ActionInvoker:
         x, y = coordinates_change
         player.x += x
         player.y += y
-        Display().reload_background()
-        Display().reload_sprites()
 
     def move_by_keys(self, key: pygame.key):
         coordinates_change = 0, 0,
@@ -34,7 +30,7 @@ class ActionInvoker:
         self.change_player_coordinates(coordinates_change)
 
     def move_by_mouse(self, button_id, position):
-        x, y = (coordinate // self.pixel_changer for coordinate in position)
+        x, y = (coordinate // pixels_changer for coordinate in position)
         x_to_change = [(1, 0) if x - self.player.x > 0 else (-1, 0) for _ in range(abs(x - self.player.x))]
         y_to_change = [(0, 1) if y - self.player.y > 0 else (0, -1) for _ in range(abs(y - self.player.y))]
         for coordinates_change in (*x_to_change, *y_to_change):

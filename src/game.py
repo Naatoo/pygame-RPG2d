@@ -1,6 +1,5 @@
 import pygame
 
-from src.events.tools.display import Display
 from src.events.tools.event_handler import EventHandler
 
 
@@ -9,7 +8,6 @@ class Game:
     def __init__(self):
         pygame.init()
         pygame.display.set_caption('RPG')
-        self.display = Display()
         self.event_handler = EventHandler()
         self.event_loop()
 

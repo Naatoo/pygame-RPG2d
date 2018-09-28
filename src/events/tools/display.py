@@ -1,6 +1,9 @@
 import pygame
+
 from src.database.db_tool import DbTool
 from src.tools.globals.singleton import Singleton
+from src.events.tools.sprites import ItemSprite, CreatureSprite
+from src.tools.globals.constants import pixels_changer
 
 
 class Display(metaclass=Singleton):
@@ -16,9 +19,6 @@ class Display(metaclass=Singleton):
         self.single_tiles = 7
         self.both_tiles = self.single_tiles * 2
         self.all_tiles = self.both_tiles + 1
-
-        self.pixels_changer = 64
-
         self.fields = [field for field in DbTool().get_rows_between(
             ('src.objects.fields', 'Field'), self.query_tuple('x'), self.query_tuple('y'))]
         self.field_type_image = {field_type.id_field_type: pygame.transform.scale2x(pygame.image.load(field_type.image))
@@ -30,25 +30,31 @@ class Display(metaclass=Singleton):
         self.sprite_group_items = pygame.sprite.Group()
         self.sprite_group_creatures = pygame.sprite.Group()
 
-    def reload_sprites(self):
-        for item in self.get_items():
-            self.sprite_group_items.add(ItemSprite((item.x - self.fields[0].x) * self.pixels_changer,
-                                                   (item.y - self.fields[0].y) * self.pixels_changer,
-                                                   item.id_bounded_item,
-                                                   self.item_type_image[item.item_id]))
-        for creature in self.get_creatures():
-            self.sprite_group_creatures.add(CreatureSprite((creature.x - self.fields[0].x) * self.pixels_changer,
-                                                           (creature.y - self.fields[0].y) * self.pixels_changer,
-                                                           creature.id_spawned_creature,
-                                                           self.creatures_images[creature.spawned_creature_type_id]))
-        self.draw_sprite_group()
+        self.refresh()
 
-    def draw_sprite_group(self):
+    def refresh(self):
+        for item in self.get_items():
+            if item not in [sprite.obj for sprite in self.sprite_group_items.sprites()]:
+                self.sprite_group_items.add(ItemSprite(item, self.item_type_image[item.item_id]))
+        for sprite in self.sprite_group_items.sprites():
+            if sprite.obj not in self.get_items():
+                self.sprite_group_items.remove(sprite)
+
+        for creature in self.get_creatures():
+            if creature not in [sprite.obj for sprite in self.sprite_group_creatures.sprites()]:
+                self.sprite_group_creatures.add(CreatureSprite(creature, self.creatures_images[creature.spawned_creature_type_id]))
+        for sprite in self.sprite_group_creatures.sprites():
+            if sprite.obj not in self.get_creatures():
+                self.sprite_group_creatures.remove(sprite)
+
+        self.sprite_group_creatures.update(self.fields[0])
+        self.sprite_group_items.update(self.fields[0])
+        self.reload_background()
+        # TODO remove old sprites from display
+
         self.sprite_group_items.draw(self.display_window)
         self.sprite_group_creatures.draw(self.display_window)
         pygame.display.update()
-        self.sprite_group_items = pygame.sprite.Group()
-        self.sprite_group_creatures = pygame.sprite.Group()
 
     def get_items(self):
         return DbTool().get_rows_between(('src.objects.items', 'BoundedItem'),
@@ -62,11 +68,9 @@ class Display(metaclass=Singleton):
 
     def reload_background(self):
         self.update_camera()
-        for index_x in range(self.all_tiles):
-            for index_y, field in zip(range(self.all_tiles), self.fields):
-                self.display_window.blit(self.field_type_image[field.field_type_id],
-                                         (index_y * self.pixels_changer, index_x * self.pixels_changer))
-        pygame.display.update()
+        for field in self.fields:
+            self.display_window.blit(self.field_type_image[field.field_type_id],
+                                     ((field.x - self.fields[0].x) * pixels_changer, (field.y - self.fields[0].y) * pixels_changer))
 
     def query_tuple(self, axis):
         if axis == "x":
@@ -79,21 +83,3 @@ class Display(metaclass=Singleton):
         self.camera_y = DbTool().get_player.y
         self.fields = [field for field in DbTool().get_rows_between(
             ('src.objects.fields', 'Field'), self.query_tuple('x'), self.query_tuple('y'))]
-
-
-class ItemSprite(pygame.sprite.Sprite):
-    def __init__(self, x, y, id_bounded_item, image):
-        pygame.sprite.Sprite.__init__(self)
-        self.id_bounded_item = id_bounded_item
-        self.image = image
-        self.rect = self.image.get_rect()
-        self.rect.center = (x, y)
-
-
-class CreatureSprite(pygame.sprite.Sprite):
-    def __init__(self, x, y, id_creature, image):
-        pygame.sprite.Sprite.__init__(self)
-        self.id_creature = id_creature
-        self.image = image
-        self.rect = self.image.get_rect()
-        self.rect.center = (x, y)
