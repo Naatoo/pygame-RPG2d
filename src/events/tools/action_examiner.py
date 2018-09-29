@@ -23,7 +23,6 @@ class ActionExaminer:
             return None
 
     def check_collect_item(self, position: tuple):
-        print(self.item_in_field(position))
         if self.item_in_field(position) is not None:
             return True
         else:

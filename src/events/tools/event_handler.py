@@ -51,8 +51,7 @@ class EventHandler:
         else:
             pass
             print("Unknown event")
-
+        # TODO send camera position instead of click position
         if action is not None:
             fn = getattr(self.action_invoker, action)
             fn(**event_data)
-        self.display.refresh()
