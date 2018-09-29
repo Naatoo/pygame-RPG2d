@@ -5,6 +5,6 @@ from collections import OrderedDict
 
 
 with open(FIELDS_DATA_FILE, "a") as data:
-    row_data = [OrderedDict(x=x, y=y, field_type_id=1) for x in range(20) for y in range(20)]
+    row_data = [OrderedDict(x=x, y=y, field_type_id=1) for y in range(100) for x in range(100)]
     table = {"Field": row_data}
     data.write(json.dumps(table))

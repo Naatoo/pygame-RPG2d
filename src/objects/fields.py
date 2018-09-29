@@ -11,13 +11,9 @@ class FieldType(FieldTypeTable):
 
 class Field(FieldTable):
     def __repr__(self):
-        fmt = "Field(id={}, type_name={})"
-        return fmt.format(self.id_field, self.type.name)
+        fmt = "Field(x={}, y={}. type_name={})"
+        return fmt.format(self.x, self.y, self.type.name)
 
     @property
     def type(self):
         return DbTool().get_one_row_where(('src.objects.fields', 'FieldType', 'id_field_type'), self.field_type_id)
-
-    @property
-    def items(self):
-        return DbTool().get_rows_where(('src.objects.items', 'BoundedItem', 'field_id'), self.id_field)

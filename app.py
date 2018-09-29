@@ -5,7 +5,7 @@ from src.game import Game
 
 if __name__ == "__main__":
     try:
-        dbtool = DbTool()
+        db_tool = DbTool()
         load_initial_data()
         game = Game()
 

@@ -23,8 +23,8 @@ class Item(ItemTable):
 class BoundedItem(BoundedItemTable):
 
     def __repr__(self):
-        fmt = 'Item(name={}, quantity={})'
-        return fmt.format(self.name, self.quantity)
+        fmt = 'Item(id={}, name={}, quantity={}, x={}, y={})'
+        return fmt.format(self.id_bounded_item, self.name, self.quantity, self.x, self.y)
 
     def get_this_item(self):
         return DbTool().get_one_row_where(('src.objects.items', 'Item', 'id_item'), self.item_id)
@@ -40,11 +40,3 @@ class BoundedItem(BoundedItemTable):
     @property
     def item(self):
         return self.get_this_item()
-
-    @property
-    def x(self):
-        return DbTool().get_one_row_where(('src.objects.fields', 'Field', 'id_field'), self.field_id).x
-
-    @property
-    def y(self):
-        return DbTool().get_one_row_where(('src.objects.fields', 'Field', 'id_field'), self.field_id).y
