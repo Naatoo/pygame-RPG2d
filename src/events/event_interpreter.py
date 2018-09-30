@@ -5,6 +5,7 @@ import src.events.logic.logic as logic
 from src.events.input_collectors.keyboard_input import KeyboardInput
 from src.events.input_collectors.mouse_input import MouseInput
 from src.database.db_tool import DbTool
+from src.events.display.display_tool import DisplayTool
 
 
 class EventInterpreter:
@@ -28,7 +29,10 @@ class EventInterpreter:
         button = 'LMB' if button_id == 1 else 'RMB'
         if button == 'LMB':
             if position == mouse_input.LMB_position:
-                logic.move_by_mouse(position)
+                try:
+                    logic.move_by_mouse(position)
+                except LogicException as e:
+                    print("You cannot got there, because {}".format(str(e)))
             elif self.item_move:
                 try:
                     logic.drop_item(mouse_input.LMB_position, position)
@@ -36,6 +40,7 @@ class EventInterpreter:
                     print(u'You cannot drop this item here, because {}'.format(str(e)))
                 finally:
                     self.item_move = False
+                    DisplayTool().refresh()
         elif button == 'RMB':
             if keys.left_ctrl in keyboard_input and is_item_in_field(position):
                 try:
@@ -62,7 +67,7 @@ class EventInterpreter:
 
     def check_call_mouse_motion(self, keyboard_input: KeyboardInput, mouse_input: MouseInput,
                                 position: tuple):
-        if 'LMB' in mouse_input:
+        if self.item_move:
             try:
                 logic.display_move_dragged_item(position)
             except LogicException as e:
@@ -77,6 +82,7 @@ class EventInterpreter:
         #         move_by_keys(key)
         # else:
         #     pass
+
 
 def is_item_in_field(position):
     player = DbTool().get_player

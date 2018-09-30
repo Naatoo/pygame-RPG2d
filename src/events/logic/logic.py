@@ -25,23 +25,21 @@ def change_player_coordinates(coordinates_change: tuple):
 
 @validator
 def can_move_by_key(key):
-    if True:  # TODO check if field is accessible
-        return True
+    if not is_field_accessible_by_key(key):
+        raise Errors.CANT_INTERACT_WITH_INACCESSIBLE_FIELD
 
 
 @validated_by(can_move_by_key)
 def move_by_keys(key: pygame.key):
-    coordinates_change = 0, 0,
     for co, bounded_key in move_choices.items():
         if bounded_key == key:
-            coordinates_change = co
-    change_player_coordinates(coordinates_change)
+            change_player_coordinates(co)
 
 
 @validator
 def can_move_by_mouse(position: tuple):
-    if True:  # TODO and when field is accessible
-        return True
+    if not is_field_accessible_by_position(position):
+        raise Errors.CANT_INTERACT_WITH_INACCESSIBLE_FIELD
 
 
 @validated_by(can_move_by_mouse)
@@ -93,7 +91,8 @@ def display_move_dragged_item(position):
 
 @validator
 def can_drop_item(initial_position: tuple, target_position: tuple):
-    return True  # TODO check if field is available to drop there
+    if not is_field_accessible_by_position(target_position):
+        raise Errors.CANT_INTERACT_WITH_INACCESSIBLE_FIELD
 
 
 @validated_by(can_drop_item)
@@ -113,3 +112,19 @@ def is_item_in_player_range(position):
     return True if (player.x - 7 + position[0] // 64, player.y - 7 + position[1] //64) \
                    in (coordinates for coordinates in DbTool().get_player.get_fields_around_and_self())\
          else False
+
+
+def is_field_accessible_by_position(position):
+    player = DbTool().get_player
+    return DbTool().get_element_in_coordinates(('src.objects.fields', 'Field'),
+                                                       player.x - 7 + position[0] // 64,
+                                                       player.y - 7 + position[1] // 64).type.accessible
+
+
+def is_field_accessible_by_key(key):
+    player = DbTool().get_player
+    for co, bounded_key in move_choices.items():
+        if bounded_key == key:
+            return DbTool().get_element_in_coordinates(('src.objects.fields', 'Field'),
+                                                       player.x + co[0],
+                                                       player.y + co[1]).type.accessible
