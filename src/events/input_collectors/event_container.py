@@ -8,6 +8,10 @@ class EventContainer(abc.ABC):
         """Return number of pressed keys/buttons"""
 
     @abc.abstractmethod
+    def __bool__(self):
+        """Returns True if any button/key was pressed, otherwise return False"""
+
+    @abc.abstractmethod
     def add_element(self, **kwargs):
         """Add input to input container"""
 

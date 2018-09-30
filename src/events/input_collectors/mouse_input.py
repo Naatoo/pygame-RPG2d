@@ -1,4 +1,4 @@
-from src.events.input_collectors.event_container import EventContainer
+from src.events.input.input_collectors.event_container import EventContainer
 
 
 class MouseInput(EventContainer):
@@ -18,6 +18,9 @@ class MouseInput(EventContainer):
 
     def __len__(self):
         return len([position for position in self.__buttons.values() if position is not None])
+
+    def __bool__(self):
+        return True if bool(self.__buttons.values()) else False
 
     def add_element(self, button_id: int, position: tuple):
         button_name = self.get_button_str(button_id)

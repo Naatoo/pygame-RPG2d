@@ -1,4 +1,4 @@
-from src.events.input_collectors.event_container import EventContainer
+from src.events.input.input_collectors.event_container import EventContainer
 
 
 class KeyboardInput(EventContainer):
@@ -18,6 +18,9 @@ class KeyboardInput(EventContainer):
 
     def __len__(self):
         return len(self.__keys)
+
+    def __bool__(self):
+        return True if bool(self.__keys) else False
 
     def add_element(self, key: int):
         self.__keys.append(key)

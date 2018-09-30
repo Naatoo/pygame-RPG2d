@@ -2,11 +2,11 @@ import pygame
 
 from src.database.db_tool import DbTool
 from src.tools.globals.singleton import Singleton
-from src.events.tools.sprites import ItemSprite, CreatureSprite
+from src.events.display.sprites import ItemSprite, CreatureSprite
 from src.tools.globals.constants import pixels_changer
 
 
-class Display(metaclass=Singleton):
+class DisplayTool(metaclass=Singleton):
 
     def __init__(self):
         width = 1280
@@ -32,6 +32,7 @@ class Display(metaclass=Singleton):
             for creature_type in DbTool().get_all_rows(('src.objects.creatures', 'CreatureType'))}
         self.sprite_group_items = pygame.sprite.Group()
         self.sprite_group_creatures = pygame.sprite.Group()
+        self.dragged_item_group = pygame.sprite.GroupSingle()
 
         self.refresh()
 
@@ -89,3 +90,15 @@ class Display(metaclass=Singleton):
         self.camera_y = DbTool().get_player.y
         self.fields = [field for field in DbTool().get_rows_between(
             ('src.objects.fields', 'Field'), self.query_tuple('x'), self.query_tuple('y'))]
+
+    def set_dragged_item(self, position):
+        for sprite in self.sprite_group_items.sprites():
+            if (sprite.obj.x, sprite.obj.y) == (self.camera_x - 7 + position[0] // 64,
+                                                self.camera_y - 7 + position[1] // 64):
+                self.sprite_group_items.remove(sprite)
+                self.dragged_item_group.add(sprite)
+
+    def move_dragged_item(self, position):
+        self.dragged_item_group.sprite.rect.topleft = (position[0], position[1])
+        self.dragged_item_group.draw(self.display_window)
+        pygame.display.update()

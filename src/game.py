@@ -1,6 +1,6 @@
 import pygame
 
-from src.events.tools.event_handler import EventHandler
+from src.events.input.event_handler import EventHandler
 
 
 class Game:

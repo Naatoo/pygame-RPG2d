@@ -10,9 +10,12 @@ class ItemSprite(pygame.sprite.Sprite):
         self.obj = obj
         self.image = image
         self.rect = self.image.get_rect()
+        self.move = False
 
     def update(self, top_left_corner):
-        self.rect.topleft = ((self.obj.x - top_left_corner.x) * pixels_changer, (self.obj.y - top_left_corner.y) * pixels_changer)
+        if self.move is False:
+            self.rect.topleft = (
+             (self.obj.x - top_left_corner.x) * pixels_changer, (self.obj.y - top_left_corner.y) * pixels_changer)
 
 
 class CreatureSprite(pygame.sprite.Sprite):
@@ -24,4 +27,5 @@ class CreatureSprite(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
 
     def update(self, top_left_corner):
-        self.rect.topleft = ((self.obj.x - top_left_corner.x) * pixels_changer, (self.obj.y - top_left_corner.y) * pixels_changer)
+        self.rect.topleft = (
+         (self.obj.x - top_left_corner.x) * pixels_changer, (self.obj.y - top_left_corner.y) * pixels_changer)
