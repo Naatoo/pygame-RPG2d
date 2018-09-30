@@ -1,4 +1,4 @@
-from src.events.input.input_collectors.event_container import EventContainer
+from src.events.input_collectors.event_container import EventContainer
 
 
 class MouseInput(EventContainer):
