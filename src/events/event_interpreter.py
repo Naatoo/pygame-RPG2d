@@ -27,10 +27,15 @@ class EventInterpreter:
                                    button_id: int, position: tuple):
         button = 'LMB' if button_id == 1 else 'RMB'
         if button == 'LMB':
-            if position == mouse_input.get_position('LMB'):
+            if position == mouse_input.LMB_position:
                 logic.move_by_mouse(position)
-            else:
-                pass  # TODO handle many actions items etc.
+            elif self.item_move:
+                try:
+                    logic.drop_item(mouse_input.LMB_position, position)
+                except LogicException as e:
+                    print(u'You cannot drop this item here, because {}'.format(str(e)))
+                finally:
+                    self.item_move = False
         elif button == 'RMB':
             if keys.left_ctrl in keyboard_input and is_item_in_field(position):
                 try:
@@ -41,12 +46,13 @@ class EventInterpreter:
                 pass  # TODO other keys
 
     def check_call_mouse_button_down(self, keyboard_input: KeyboardInput, mouse_input: MouseInput,
-                                button_id: int, position: tuple):
+                                     button_id: int, position: tuple):
         button = 'LMB' if button_id == 1 else 'RMB'
         if button == 'LMB':
             if is_item_in_field(position):
                 try:
-                    logic.start_drag_item(mouse_input, position)
+                    logic.drag_item(mouse_input, position)
+                    self.item_move = True
                 except LogicException as e:
                     print(u"You cannot drag this item, because {}".format(str(e)))
             else:
@@ -58,7 +64,7 @@ class EventInterpreter:
                                 position: tuple):
         if 'LMB' in mouse_input:
             try:
-                logic.move_dragged_item(position)
+                logic.display_move_dragged_item(position)
             except LogicException as e:
                 print(u"You cannot move this item, because {}".format(str(e)))
         elif 'RMB' in mouse_input:

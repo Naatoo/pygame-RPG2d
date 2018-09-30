@@ -27,8 +27,6 @@ def change_player_coordinates(coordinates_change: tuple):
 def can_move_by_key(key):
     if True:  # TODO check if field is accessible
         return True
-    else:
-        return None
 
 
 @validated_by(can_move_by_key)
@@ -44,8 +42,6 @@ def move_by_keys(key: pygame.key):
 def can_move_by_mouse(position: tuple):
     if True:  # TODO and when field is accessible
         return True
-    else:
-        return False
 
 
 @validated_by(can_move_by_mouse)
@@ -80,38 +76,36 @@ def collect_item(position: tuple):
     DisplayTool().refresh()
 
 
-
-# def move_item(from_coordinates, to_coordinates):
-#     initial_field = DbTool().get_one_row_where_two_conditions(
-#         ('src.objects.fields', 'Field', ('x', 'y')), from_coordinates)
-#     target_field = DbTool().get_one_row_where_two_conditions(
-#         ('src.objects.fields', 'Field', ('x', 'y')), to_coordinates)
-#     columns_to_update = {'field_id': target_field.id_field}
-#     DbTool().update_row(('src.objects.items', 'BoundedItem', 'field_id'), initial_field.id_field,
-#                         columns_to_update)
-# def cancel_move_item():
-#     pass
-#
-
 @validator
-def can_start_drag_item(mouse_input, position: tuple):
+def can_drag_item(mouse_input, position: tuple):
     if not is_item_in_player_range(position):
         raise Errors.CANT_INTERACT_WITH_ITEM_TOO_FAR
 
 
-@validated_by(can_start_drag_item)
-def start_drag_item(mouse_input, position: tuple):
+@validated_by(can_drag_item)
+def drag_item(mouse_input, position: tuple):
     DisplayTool().set_dragged_item(position)
 
 
-@validator
-def can_move_dragged_item(position: tuple):
-    return True  # TODO add constraints
-
-
-@validated_by(can_move_dragged_item)
-def move_dragged_item(position):
+def display_move_dragged_item(position):
     DisplayTool().move_dragged_item(position)
+
+
+@validator
+def can_drop_item(initial_position: tuple, target_position: tuple):
+    return True  # TODO check if field is available to drop there
+
+
+@validated_by(can_drop_item)
+def drop_item(initial_position: tuple, target_position: tuple):
+    player = DbTool().get_player
+    columns_to_update = {'x': player.x - 7 + target_position[0] // 64,
+                         'y': player.y - 7 + target_position[1] // 64}
+    DbTool().update_element_in_coordinates(('src.objects.items', 'BoundedItem'),
+                                           player.x - 7 + initial_position[0] // 64,
+                                           player.y - 7 + initial_position[1] // 64,
+                                           columns_to_update)
+    DisplayTool().refresh()
 
 
 def is_item_in_player_range(position):

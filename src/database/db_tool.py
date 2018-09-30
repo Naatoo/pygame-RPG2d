@@ -69,6 +69,13 @@ class DbTool(metaclass=Singleton):
         table = getattr(importlib.import_module(module), table_name)
         return self.session.query(table).filter(getattr(table, col) == second_to_eq).update(columns_to_update)
 
+    def update_element_in_coordinates(self, data: tuple, x: int, y: int, columns_to_update: dict):
+        module, table_name = data
+        table = getattr(importlib.import_module(module), table_name)
+        first_col_x = getattr(table, 'x')
+        first_col_y = getattr(table, 'y')
+        self.session.query(table).filter(and_(first_col_x == x, first_col_y == y)).update(columns_to_update)
+
     def insert_row(self, row):
         self.session.add(row)
 

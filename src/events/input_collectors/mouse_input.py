@@ -37,9 +37,13 @@ class MouseInput(EventContainer):
     def get_button_str(button: int) -> str:
         return 'LMB' if button == 1 else 'RMB'
 
-    @property
-    def any_clicked(self) -> bool:
-        return 'LMB' in self or 'RMB' in self
-
     def get_position(self, button_name: str) -> tuple:
         return self.__buttons[button_name]
+
+    @property
+    def LMB_position(self):
+        return self.__buttons['LMB']
+
+    @property
+    def RM_position(self):
+        return self.__buttons['RMB']
