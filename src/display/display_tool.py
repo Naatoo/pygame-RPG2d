@@ -2,7 +2,7 @@ import pygame
 
 from src.database.db_tool import DbTool
 from src.tools.globals.singleton import Singleton
-from src.events.display.sprites import ItemSprite, CreatureSprite
+from src.display.sprites import ItemSprite, CreatureSprite
 from src.tools.globals.constants import pixels_changer
 
 

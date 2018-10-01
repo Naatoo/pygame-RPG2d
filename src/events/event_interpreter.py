@@ -1,11 +1,11 @@
 from business_logic import LogicException
 
 from src.events import keys
-import src.events.logic.logic as logic
+import src.logic.logic as logic
 from src.events.input_collectors.keyboard_input import KeyboardInput
 from src.events.input_collectors.mouse_input import MouseInput
 from src.database.db_tool import DbTool
-from src.events.display.display_tool import DisplayTool
+from src.display.display_tool import DisplayTool
 
 
 class EventInterpreter:

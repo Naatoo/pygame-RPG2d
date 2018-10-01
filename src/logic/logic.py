@@ -3,8 +3,8 @@ from business_logic import validated_by, validator
 
 from src.database.db_tool import DbTool
 from src.tools.globals.constants import pixels_changer
-from src.events.display.display_tool import DisplayTool
-from src.events.logic.errors import Errors
+from src.display.display_tool import DisplayTool
+from src.logic.errors import Errors
 
 
 move_choices = {

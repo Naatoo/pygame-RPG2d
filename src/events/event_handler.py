@@ -3,7 +3,7 @@ import pygame
 from src.events.input_collectors.keyboard_input import KeyboardInput
 from src.events.input_collectors.mouse_input import MouseInput
 from src.events.event_interpreter import EventInterpreter
-from src.events.display.display_tool import DisplayTool
+from src.display.display_tool import DisplayTool
 
 
 class EventHandler:
